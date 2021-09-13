@@ -6,6 +6,8 @@ import Footer from './components/footer';
 import video from './assets/unlock-background-video.mp4';
 import homeBanner from './assets/home-banner.jpg';
 import { makeStyles } from '@material-ui/core/styles';
+const axios = require('axios');
+const oauth = require('axios-oauth-client');
 
 const useStyles = makeStyles((theme) => ({
   app: {
@@ -67,19 +69,22 @@ function App() {
     client_secret: "75613555681505ff11ac8aa630043b88",
     grant_type: "authorization_code",
     redirect_uri: "https://unlock-films.vercel.app/",
-    code: "AQAkU7geqh6pn2Z1BgJ2HzPQ7LfNTNE_Q_jDkMkpIsFBDBqYu1dVyZSVdw19d5JPhfYmr6O0MQJaggzccSuL045hC6C08b_Lbt4JlVVlEqyGvnI3jHPmwGSCUG0UZu1FlMcNPBLenWWVpogEr1pASsssBGZTOiXt3OJ1loGecmfk2w7-niXFo85I_o-CjUMoNItEZpBEujOf1wyB7MdMPVI1MRDDzXgCO0eONaquTJg3Jg"
+    code: ""
   };
 
   useEffect(() => {
-    fetch('//api.instagram.com/oauth/access_token', {
-      method: 'POST',
-      body: JSON.stringify(body),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8"
-      }
-    })
-      .then(response => response.json())
-      .then(json => console.log(json));
+    const getAuthorizationCode = oauth.client(axios.create(), {
+      url: 'https://api.instagram.com/oauth/access_token',
+      grant_type: 'authorization_code',
+      client_id: '911248353137466',
+      client_secret: '75613555681505ff11ac8aa630043b88',
+      redirect_uri: 'https://unlock-films.vercel.app/',
+      code: 'AQAkU7geqh6pn2Z1BgJ2HzPQ7LfNTNE_Q_jDkMkpIsFBDBqYu1dVyZSVdw19d5JPhfYmr6O0MQJaggzccSuL045hC6C08b_Lbt4JlVVlEqyGvnI3jHPmwGSCUG0UZu1FlMcNPBLenWWVpogEr1pASsssBGZTOiXt3OJ1loGecmfk2w7-niXFo85I_o-CjUMoNItEZpBEujOf1wyB7MdMPVI1MRDDzXgCO0eONaquTJg3Jg',
+      scope: 'baz',
+    });
+
+    const auth = await getAuthorizationCode();
+    console.log(auth)
   }, []);
 
   return (
