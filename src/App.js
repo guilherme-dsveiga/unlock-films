@@ -7,7 +7,6 @@ import video from './assets/unlock-background-video.mp4';
 import homeBanner from './assets/home-banner.jpg';
 import { makeStyles } from '@material-ui/core/styles';
 
-
 const useStyles = makeStyles((theme) => ({
   app: {
     display: 'flex',
@@ -63,17 +62,24 @@ const useStyles = makeStyles((theme) => ({
 
 function App() {
   const classes = useStyles();
+  const body = {
+    client_id: "911248353137466",
+    client_secret: "75613555681505ff11ac8aa630043b88",
+    grant_type: "authorization_code",
+    redirect_uri: "https://unlock-films.vercel.app",
+    code: "AQCoD-XT0WdKQUoXiXTtqYBiG-JH8h6dLKNLyjRiYBdeA1ndBnnPdTNzmuFfT4LnpAbnxmZ1BGYunjA4436serIircBi4GXGvQFS8Pd6QnrMg2jvPywTQCchr5PSh4BbyQbo4xOKJjuGzxrRHEuOL5HMw4zeqPfgb6KuX02ebKqAKBdAHLII327PTX0nyAONjGI4TrsD6MHAUhctRq7oSUzqM6g8oknr_I6MasRZYT1GZg"
+  };
 
   useEffect(() => {
-    const getPosts = async () => {
-      let info = await fetch('https://www.instagram.com/unlockfilms/?__a=1').then(
-        (res) => res.json()
-      )
-      console.log(info)
-      return info
-    }
-
-    getPosts();
+    fetch('//api.instagram.com/oauth/access_token', {
+      method: 'POST',
+      body: JSON.stringify(body),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8"
+      }
+    })
+      .then(response => response.json())
+      .then(json => console.log(json));
   }, []);
 
   return (

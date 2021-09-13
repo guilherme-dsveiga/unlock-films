@@ -17,6 +17,7 @@
     "react-instafeed": "^1.0.0",
     "react-player": "^2.9.0",
     "react-scripts": "4.0.3",
+    "user-instagram": "^2.1.9",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
