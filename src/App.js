@@ -1,4 +1,3 @@
-import './App.css';
 import React, { useState, useEffect } from 'react';
 import Header from './components/header';
 import Clients from './components/clients';
@@ -6,8 +5,10 @@ import Footer from './components/footer';
 import video from './assets/unlock-background-video.mp4';
 import homeBanner from './assets/home-banner.jpg';
 import { makeStyles } from '@material-ui/core/styles';
+import { buildUrl } from 'react-instafeed';
 const axios = require('axios');
-const oauth = require('axios-oauth-client');
+
+
 
 const useStyles = makeStyles((theme) => ({
   app: {
@@ -64,28 +65,25 @@ const useStyles = makeStyles((theme) => ({
 
 function App() {
   const classes = useStyles();
-  const body = {
-    client_id: "911248353137466",
-    client_secret: "75613555681505ff11ac8aa630043b88",
-    grant_type: "authorization_code",
-    redirect_uri: "https://unlock-films.vercel.app/",
-    code: ""
-  };
+
+  const [postInfo, setPostInfo] = useState();
 
   useEffect(() => {
-    const getAuthorizationCode = oauth.client(axios.create(), {
-      url: 'https://api.instagram.com/oauth/access_token',
-      grant_type: 'authorization_code',
-      client_id: '911248353137466',
-      client_secret: '75613555681505ff11ac8aa630043b88',
-      redirect_uri: 'https://unlock-films.vercel.app/',
-      code: 'AQAkU7geqh6pn2Z1BgJ2HzPQ7LfNTNE_Q_jDkMkpIsFBDBqYu1dVyZSVdw19d5JPhfYmr6O0MQJaggzccSuL045hC6C08b_Lbt4JlVVlEqyGvnI3jHPmwGSCUG0UZu1FlMcNPBLenWWVpogEr1pASsssBGZTOiXt3OJ1loGecmfk2w7-niXFo85I_o-CjUMoNItEZpBEujOf1wyB7MdMPVI1MRDDzXgCO0eONaquTJg3Jg',
-      scope: 'baz',
-    });
+    const getPostsInfo = async () => {
+      const getToken = async () => {
+        const instagramToken = await fetch('https://ig.instant-tokens.com/users/3b35b858-12c7-47d0-b1ff-3c3d9467809d/instagram/17841401512393980/token?userSecret=7vqakecblcnr1wuknbqsp').then((res) => res.json());
+        const url = "https://graph.instagram.com/me/media?access_token=" + instagramToken.Token.toString() + "&fields=media_url,media_type,permalink"
+        return url;
+      }
+      const url = await getToken()
+      axios.get(url).then(function (response) {
+        setPostInfo(response.data.data);
+      })
+    }
 
-    const auth = await getAuthorizationCode();
-    console.log(auth)
-  }, []);
+    getPostsInfo();
+  })
+
 
   return (
     <div className={classes.app} >
@@ -101,7 +99,7 @@ function App() {
       <div className={classes.homeBanner}>
       </div>
       <Clients />
-      <Footer />
+      <Footer postData={postInfo}/>
     </div>
   );
 }
