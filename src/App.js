@@ -66,7 +66,7 @@ function App() {
     client_id: "911248353137466",
     client_secret: "75613555681505ff11ac8aa630043b88",
     grant_type: "authorization_code",
-    redirect_uri: "https://unlock-films.vercel.app",
+    redirect_uri: "https://unlock-films.vercel.app/",
     code: "AQAkU7geqh6pn2Z1BgJ2HzPQ7LfNTNE_Q_jDkMkpIsFBDBqYu1dVyZSVdw19d5JPhfYmr6O0MQJaggzccSuL045hC6C08b_Lbt4JlVVlEqyGvnI3jHPmwGSCUG0UZu1FlMcNPBLenWWVpogEr1pASsssBGZTOiXt3OJ1loGecmfk2w7-niXFo85I_o-CjUMoNItEZpBEujOf1wyB7MdMPVI1MRDDzXgCO0eONaquTJg3Jg"
   };
 
