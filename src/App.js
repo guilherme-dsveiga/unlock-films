@@ -109,7 +109,6 @@ function App() {
       const url = await getToken()
       axios.get(url).then(function (response) {
         setPostInfo(response.data.data);
-        console.log(postInfo)
       })
     }
 
