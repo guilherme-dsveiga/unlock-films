@@ -99,7 +99,7 @@ export default ({ postData }) => {
 
         return (
                         <div className={classes.footerContainer}>
-                                <Box display="flex" flexDirection="row" justifyContent="space-around" alignItems="center" width="100%">
+                                <Box display="flex" flexDirection="row" justifyContent="space-evenly" alignItems="center" width="100%">
                                         <div className={classes.contactContainer}>
                                                 <Typography variant="h5">Contato</Typography>
                                                 <div className={classes.outterContact}>

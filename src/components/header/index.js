@@ -9,6 +9,7 @@ import YoutubeIcon from '../../assets/youtube.svg';
 import InstagramIcon from '../../assets/instagram.svg';
 import UnlockLogo from '../../assets/unlock-logo.png';
 import Icon from '@material-ui/core/Icon';
+import './header.css';
 
 const useStyles = makeStyles((theme) => ({
         appbar: {
@@ -31,12 +32,12 @@ const useStyles = makeStyles((theme) => ({
                         borderBottom: 'solid 3px white'
                 },
         },
-        logoRoot:{
+        logoRoot: {
                 textAlign: 'center',
                 height: '100px',
                 width: 'auto'
         },
-        logoIcon:{
+        logoIcon: {
                 height: '100%',
         },
         imageIcon: {
@@ -46,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
                 textAlign: 'center'
         }
 }));
-export default () => {
+export default ({ black }) => {
         const classes = useStyles();
 
         const [anchorEl, setAnchorEl] = useState(null);
@@ -60,7 +61,7 @@ export default () => {
         };
 
         return (
-                <AppBar position="fixed" className={classes.appbar} color="transparent">
+                <AppBar position="fixed" className={black ? 'bg-black' : classes.appbar} color="transparent">
                         <Toolbar className={classes.toolbar}>
                                 <IconButton color="primary" aria-label="upload picture" component="span">
                                         <Icon classes={{ root: classes.logoRoot }}>

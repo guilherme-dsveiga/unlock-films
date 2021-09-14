@@ -6,15 +6,20 @@ const useStyles = makeStyles((theme) => ({
                 display: 'flex',
                 flexDirection: 'column',
                 maxHeight: '600px',
-                height: '600px',
+                height: '500px',
+                width: '450px',
+                paddingBlock: '15px',
                 justifyContent: 'center',
-                alignItems: 'center'
+                alignItems: 'center',
+                margin: '0 auto',
+                borderRadius: '15px',
         },
         row: {
                 display: 'flex',
                 flexDirection: 'row',
                 width: 'auto',
                 height: '33%',
+                justifyContent: 'center'
         },
         img: {
                 width: '100%',
@@ -22,12 +27,14 @@ const useStyles = makeStyles((theme) => ({
                 transform: 'scale(0.95)',
                 transition: 'all 0.2s ease',
                 borderRadius: '5px',
+                boxShadow: '10px 10px 21px -6px rgba(0,0,0,0.75)',
                 '&:hover': {
                         transform: 'scale(1)'
                 },
         },
         a: {
-                cursor: 'pointer'
+                cursor: 'pointer',
+                width: '150px'
         }
 
 }));
@@ -40,7 +47,7 @@ export default ({ postData }) => {
                         {postData &&
                                 <div className={classes.instaGrid}>
                                         <div className={classes.row}>
-                                                <a className={classes.a}>
+                                                <a href={postData[0].permalink} className={classes.a}>
                                                         {postData[0].media_type == 'VIDEO' ?
                                                                 <video className={classes.img}>
                                                                         <source src={postData[0].media_url}></source>
@@ -49,7 +56,7 @@ export default ({ postData }) => {
                                                                 <img className={classes.img} src={postData[0].media_url}></img>
                                                         }
                                                 </a>
-                                                <a className={classes.a}>
+                                                <a href={postData[1].permalink} className={classes.a}>
                                                         {postData[1].media_type == 'VIDEO' ?
                                                                 <video className={classes.img}>
                                                                         <source src={postData[1].media_url}></source>
@@ -58,7 +65,7 @@ export default ({ postData }) => {
                                                                 <img className={classes.img} src={postData[1].media_url}></img>
                                                         }
                                                 </a>
-                                                <a className={classes.a}>
+                                                <a href={postData[2].permalink} className={classes.a}>
                                                         {postData[2].media_type == 'VIDEO' ?
                                                                 <video className={classes.img}>
                                                                         <source src={postData[2].media_url}></source>
@@ -68,7 +75,7 @@ export default ({ postData }) => {
                                                         }</a>
                                         </div>
                                         <div className={classes.row}>
-                                                <a className={classes.a}>
+                                                <a href={postData[3].permalink} className={classes.a}>
                                                         {postData[3].media_type == 'VIDEO' ?
                                                                 <video className={classes.img}>
                                                                         <source src={postData[3].media_url}></source>
@@ -77,7 +84,7 @@ export default ({ postData }) => {
                                                                 <img className={classes.img} src={postData[3].media_url}></img>
                                                         }
                                                 </a>
-                                                <a className={classes.a}>
+                                                <a href={postData[4].permalink} className={classes.a}>
                                                         {postData[4].media_type == 'VIDEO' ?
                                                                 <video className={classes.img}>
                                                                         <source src={postData[4].media_url}></source>
@@ -86,7 +93,7 @@ export default ({ postData }) => {
                                                                 <img className={classes.img} src={postData[4].media_url}></img>
                                                         }
                                                 </a>
-                                                <a className={classes.a}>
+                                                <a href={postData[5].permalink} className={classes.a}>
                                                         {postData[5].media_type == 'VIDEO' ?
                                                                 <video className={classes.img}>
                                                                         <source src={postData[5].media_url}></source>
@@ -97,7 +104,7 @@ export default ({ postData }) => {
                                                 </a>
                                         </div>
                                         <div className={classes.row}>
-                                                <a className={classes.a}>
+                                                <a href={postData[6].permalink} className={classes.a}>
                                                         {postData[6].media_type == 'VIDEO' ?
                                                                 <video className={classes.img}>
                                                                         <source src={postData[6].media_url}></source>
@@ -106,7 +113,7 @@ export default ({ postData }) => {
                                                                 <img className={classes.img} src={postData[6].media_url}></img>
                                                         }
                                                 </a>
-                                                <a className={classes.a}>
+                                                <a href={postData[7].permalink} className={classes.a}>
                                                         {postData[7].media_type == 'VIDEO' ?
                                                                 <video className={classes.img}>
                                                                         <source src={postData[7].media_url}></source>
@@ -115,7 +122,7 @@ export default ({ postData }) => {
                                                                 <img className={classes.img} src={postData[7].media_url}></img>
                                                         }
                                                 </a>
-                                                <a className={classes.a}>
+                                                <a href={postData[8].permalink} className={classes.a}>
                                                         {postData[8].media_type == 'VIDEO' ?
                                                                 <video className={classes.img}>
                                                                         <source src={postData[8].media_url}></source>

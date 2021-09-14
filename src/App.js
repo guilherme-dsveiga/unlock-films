@@ -4,6 +4,8 @@ import Clients from './components/clients';
 import Footer from './components/footer';
 import video from './assets/unlock-background-video.mp4';
 import homeBanner from './assets/home-banner.jpg';
+import IconButton from '@material-ui/core/IconButton';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { makeStyles } from '@material-ui/core/styles';
 import { buildUrl } from 'react-instafeed';
 const axios = require('axios');
@@ -59,6 +61,18 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
     zIndex: '2',
   },
+  scrollDownButton: {
+    position: 'absolute',
+    backgroundColor: 'rgb(198 198 198)',
+    color: 'black',
+    margin: '0 auto',
+    zIndex: '999',
+    bottom: '50px',
+    left: '48%',
+    '&:hover': {
+      backgroundColor: 'rgb(130 130 130)',
+    },
+  },
 }));
 
 
@@ -67,6 +81,23 @@ function App() {
   const classes = useStyles();
 
   const [postInfo, setPostInfo] = useState();
+  const [blackHeader, setBlackHeader] = useState(false);
+
+  useEffect(() => {
+    const scrollListener = () => {
+      if (window.scrollY > 850) {
+        setBlackHeader(true);
+      } else {
+        setBlackHeader(false);
+      }
+    }
+
+    window.addEventListener('scroll', scrollListener);
+
+    return () => {
+      window.removeEventListener('scroll', scrollListener);
+    }
+  }, []);
 
   useEffect(() => {
     const getPostsInfo = async () => {
@@ -83,19 +114,29 @@ function App() {
     }
 
     getPostsInfo();
-  })
+  },  []);
 
+  function handleScroll() {
+    window.scroll({
+      top: document.body.offsetHeight,
+      left: 0,
+      behavior: 'smooth',
+    });
+  }
 
   return (
     <div className={classes.app} >
       <div className={classes.headerVideoWrapper}>
-        <Header />
+        <Header black={blackHeader}/>
         <div className={classes.backdropVideo}>
         </div>
         <video className={classes.backdropVideoVideo} autoPlay loop muted disablePictureInPicture>
           <source src={video} type="video/mp4"></source>
         </video>
       </div>
+      <IconButton className={classes.scrollDownButton} onClick={handleScroll} component="span">
+        <ExpandMoreIcon></ExpandMoreIcon>
+      </IconButton>
       <div className={classes.bannerGradient}></div>
       <div className={classes.homeBanner}>
       </div>
