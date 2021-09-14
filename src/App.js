@@ -71,13 +71,14 @@ function App() {
   useEffect(() => {
     const getPostsInfo = async () => {
       const getToken = async () => {
-        const instagramToken = await fetch('https://ig.instant-tokens.com/users/3b35b858-12c7-47d0-b1ff-3c3d9467809d/instagram/17841401512393980/token?userSecret=7vqakecblcnr1wuknbqsp').then((res) => res.json());
+        const instagramToken = await fetch('https://ig.instant-tokens.com/users/3b35b858-12c7-47d0-b1ff-3c3d9467809d/instagram/17841404417068492/token?userSecret=7mdvv0opy7fir3b7nv14nf').then((res) => res.json());
         const url = "https://graph.instagram.com/me/media?access_token=" + instagramToken.Token.toString() + "&fields=media_url,media_type,permalink"
         return url;
       }
       const url = await getToken()
       axios.get(url).then(function (response) {
         setPostInfo(response.data.data);
+        console.log(postInfo)
       })
     }
 
@@ -99,7 +100,7 @@ function App() {
       <div className={classes.homeBanner}>
       </div>
       <Clients />
-      <Footer postData={postInfo}/>
+      <Footer postData={postInfo} />
     </div>
   );
 }

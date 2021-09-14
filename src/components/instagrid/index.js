@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
                         transform: 'scale(1)'
                 },
         },
-        a:{
+        a: {
                 cursor: 'pointer'
         }
 
@@ -40,24 +40,96 @@ export default ({ postData }) => {
                         {postData &&
                                 <div className={classes.instaGrid}>
                                         <div className={classes.row}>
-                                                <a className={classes.a}><img className={classes.img} src={postData[0].media_url}></img></a>
-                                                <a className={classes.a}><img className={classes.img} src={postData[1].media_url}></img></a>
-                                                <a className={classes.a}><img className={classes.img} src={postData[3].media_url}></img></a>
+                                                <a className={classes.a}>
+                                                        {postData[0].media_type == 'VIDEO' ?
+                                                                <video className={classes.img}>
+                                                                        <source src={postData[0].media_url}></source>
+                                                                </video>
+                                                                :
+                                                                <img className={classes.img} src={postData[0].media_url}></img>
+                                                        }
+                                                </a>
+                                                <a className={classes.a}>
+                                                        {postData[1].media_type == 'VIDEO' ?
+                                                                <video className={classes.img}>
+                                                                        <source src={postData[1].media_url}></source>
+                                                                </video>
+                                                                :
+                                                                <img className={classes.img} src={postData[1].media_url}></img>
+                                                        }
+                                                </a>
+                                                <a className={classes.a}>
+                                                        {postData[2].media_type == 'VIDEO' ?
+                                                                <video className={classes.img}>
+                                                                        <source src={postData[2].media_url}></source>
+                                                                </video>
+                                                                :
+                                                                <img className={classes.img} src={postData[2].media_url}></img>
+                                                        }</a>
                                         </div>
                                         <div className={classes.row}>
-                                                <a className={classes.a}><img className={classes.img} src={postData[3].media_url}></img></a>
-                                                <a className={classes.a}><img className={classes.img} src={postData[0].media_url}></img></a>
-                                                <a className={classes.a}><img className={classes.img} src={postData[1].media_url}></img></a>
+                                                <a className={classes.a}>
+                                                        {postData[3].media_type == 'VIDEO' ?
+                                                                <video className={classes.img}>
+                                                                        <source src={postData[3].media_url}></source>
+                                                                </video>
+                                                                :
+                                                                <img className={classes.img} src={postData[3].media_url}></img>
+                                                        }
+                                                </a>
+                                                <a className={classes.a}>
+                                                        {postData[4].media_type == 'VIDEO' ?
+                                                                <video className={classes.img}>
+                                                                        <source src={postData[4].media_url}></source>
+                                                                </video>
+                                                                :
+                                                                <img className={classes.img} src={postData[4].media_url}></img>
+                                                        }
+                                                </a>
+                                                <a className={classes.a}>
+                                                        {postData[5].media_type == 'VIDEO' ?
+                                                                <video className={classes.img}>
+                                                                        <source src={postData[5].media_url}></source>
+                                                                </video>
+                                                                :
+                                                                <img className={classes.img} src={postData[5].media_url}></img>
+                                                        }
+                                                </a>
                                         </div>
                                         <div className={classes.row}>
-                                                <a className={classes.a}><img className={classes.img} src={postData[2].media_url}></img></a>
-                                                <a className={classes.a}><img className={classes.img} src={postData[3].media_url}></img></a>
-                                                <a className={classes.a}><img className={classes.img} src={postData[0].media_url}></img></a>
+                                                <a className={classes.a}>
+                                                        {postData[6].media_type == 'VIDEO' ?
+                                                                <video className={classes.img}>
+                                                                        <source src={postData[6].media_url}></source>
+                                                                </video>
+                                                                :
+                                                                <img className={classes.img} src={postData[6].media_url}></img>
+                                                        }
+                                                </a>
+                                                <a className={classes.a}>
+                                                        {postData[7].media_type == 'VIDEO' ?
+                                                                <video className={classes.img}>
+                                                                        <source src={postData[7].media_url}></source>
+                                                                </video>
+                                                                :
+                                                                <img className={classes.img} src={postData[7].media_url}></img>
+                                                        }
+                                                </a>
+                                                <a className={classes.a}>
+                                                        {postData[8].media_type == 'VIDEO' ?
+                                                                <video className={classes.img}>
+                                                                        <source src={postData[8].media_url}></source>
+                                                                </video>
+                                                                :
+                                                                <img className={classes.img} src={postData[8].media_url}></img>
+                                                        }
+                                                </a>
                                         </div>
                                 </div>
+
                         }
 
-                </div>
+                </div >
 
 
         );
