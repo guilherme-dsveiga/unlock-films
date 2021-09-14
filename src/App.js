@@ -118,7 +118,7 @@ function App() {
 
   function handleScroll() {
     window.scroll({
-      top: document.body.offsetHeight,
+      top: 1455,
       left: 0,
       behavior: 'smooth',
     });
