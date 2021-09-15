@@ -13,6 +13,11 @@ const useStyles = makeStyles((theme) => ({
                 alignItems: 'center',
                 margin: '0 auto',
                 borderRadius: '15px',
+                [theme.breakpoints.down(500)]: {
+                        maxHeight: '400px',
+                        height: 'auto',
+                        width: '100%',
+                }
         },
         row: {
                 display: 'flex',
@@ -31,10 +36,14 @@ const useStyles = makeStyles((theme) => ({
                 '&:hover': {
                         transform: 'scale(1)'
                 },
+               
         },
         a: {
                 cursor: 'pointer',
-                width: '150px'
+                width: '150px',
+                [theme.breakpoints.down(500)]: {
+                        width: '75px',
+                }
         }
 
 }));

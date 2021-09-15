@@ -5,6 +5,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Rihappy from '../../assets/gruporihappy.png';
 import Viaskate from '../../assets/viaskate-black.jpeg';
+import Dabdog from '../../assets/dabdog.png';
 import AddIcon from '@material-ui/icons/Add';
 
 
@@ -15,11 +16,16 @@ const useStyles = makeStyles((theme) => ({
         ourClients: {
                 textAlign: 'center',
                 paddingBlock: theme.spacing(8),
+                [theme.breakpoints.down(500)]: {
+                        fontSize: '1.5rem',
+                        paddingBlock: theme.spacing(3),
+                }
         },
         clientsContainer: {
                 display: 'flex',
                 flexDirection: 'column',
-                paddingBottom: theme.spacing(3)
+                paddingBottom: theme.spacing(3),
+                
         },
         gridImageContainer: {
                 display: 'flex',
@@ -32,13 +38,17 @@ const useStyles = makeStyles((theme) => ({
                 alignSelf: 'center'
         },
         gridImageResize: {
-                width: '150px',
+                width: '100%',
                 height: 'auto',
         },
         gridContainer: {
                 justifyContent: 'center',
                 alignItems: 'center',
-                marginBottom: theme.spacing(5)
+                marginBottom: theme.spacing(5),
+                [theme.breakpoints.down(500)]: {
+                       display: 'flex',
+                       flexDirection: 'column'
+                }
         },
         button: {
                 margin: '0 auto',
@@ -66,10 +76,10 @@ export default () => {
                                                 <img className={classes.gridImageResize} src={Viaskate}></img>
                                         </Grid>
                                         <Grid className={classes.gridImageContainer} item xs={3}>
-                                                <img className={classes.gridImage} src={Rihappy}></img>
+                                                <img className={classes.gridImageResize} src={Dabdog}></img>
                                         </Grid>
                                         <Grid className={classes.gridImageContainer} item xs={3}>
-                                                <img className={classes.gridImageResize} src={Viaskate}></img>
+                                                <img className={classes.gridImage} src={Rihappy}></img>
                                         </Grid>
                                 </Grid>
                                 <Button
