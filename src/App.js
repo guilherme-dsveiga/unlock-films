@@ -102,13 +102,14 @@ function App() {
   useEffect(() => {
     const getPostsInfo = async () => {
       const getToken = async () => {
-        const instagramToken = await fetch('https://ig.instant-tokens.com/users/3b35b858-12c7-47d0-b1ff-3c3d9467809d/instagram/17841404417068492/token?userSecret=7mdvv0opy7fir3b7nv14nf').then((res) => res.json());
-        const url = "https://graph.instagram.com/me/media?access_token=" + instagramToken.Token.toString() + "&fields=media_url,media_type,permalink"
+        const instagramToken = await fetch('https://ig.instant-tokens.com/users/3b35b858-12c7-47d0-b1ff-3c3d9467809d/instagram/17841421110663076/token?userSecret=ifanstoaihr16010givp6v').then((res) => res.json());
+        const url = "https://graph.instagram.com/me/media?access_token=" + instagramToken.Token.toString() + "&fields=media_url,media_type,permalink,thumbnail_url"
         return url;
       }
       const url = await getToken()
       axios.get(url).then(function (response) {
         setPostInfo(response.data.data);
+        console.log(response.data.data)
       })
     }
 
@@ -129,7 +130,7 @@ function App() {
         <Header black={blackHeader}/>
         <div className={classes.backdropVideo}>
         </div>
-        <video className={classes.backdropVideoVideo} autoPlay loop muted playsinline disablePictureInPicture>
+        <video className={classes.backdropVideoVideo} autoPlay loop muted playsInline disablePictureInPicture>
           <source src={video} type="video/mp4"></source>
         </video>
       </div>
