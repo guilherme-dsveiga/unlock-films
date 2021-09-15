@@ -129,7 +129,7 @@ function App() {
         <Header black={blackHeader}/>
         <div className={classes.backdropVideo}>
         </div>
-        <video className={classes.backdropVideoVideo} autoPlay loop muted disablePictureInPicture>
+        <video className={classes.backdropVideoVideo} autoPlay loop muted playsinline disablePictureInPicture>
           <source src={video} type="video/mp4"></source>
         </video>
       </div>
