@@ -32,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
                 transform: 'scale(0.95)',
                 transition: 'all 0.2s ease',
                 borderRadius: '5px',
+                objectFit: 'cover',
                 boxShadow: '10px 10px 21px -6px rgba(0,0,0,0.75)',
                 '&:hover': {
                         transform: 'scale(1)'

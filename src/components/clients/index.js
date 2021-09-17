@@ -16,8 +16,12 @@ const useStyles = makeStyles((theme) => ({
         ourClients: {
                 textAlign: 'center',
                 paddingBlock: theme.spacing(8),
+                [theme.breakpoints.down(900)]: {
+                        fontSize: '24px!important',
+                        paddingBlock: theme.spacing(5),
+                },
                 [theme.breakpoints.down(500)]: {
-                        fontSize: '1.5rem',
+                        fontSize: '20!important',
                         paddingBlock: theme.spacing(3),
                 }
         },
@@ -67,7 +71,7 @@ export default () => {
         return (
                 <div className={classes.clientsWrapper}>
                         <Container className={classes.clientsContainer}>
-                                <Typography variant="h4" className={classes.ourClients}>NOSSOS CLIENTES</Typography>
+                                <Typography variant='h4' className={classes.ourClients}>NOSSOS CLIENTES</Typography>
                                 <Grid className={classes.gridContainer} container spacing={3}>
                                         <Grid className={classes.gridImageContainer} item xs={3}>
                                                 <img className={classes.gridImage} src={Rihappy}></img>
