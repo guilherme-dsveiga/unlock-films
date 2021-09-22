@@ -5,6 +5,7 @@ import thumbnail from '../../assets/thumbnail.png';
 import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
 import clsx from 'clsx';
 import IconButton from '@material-ui/core/IconButton';
+import './films.css';
 
 const useStyles = makeStyles((theme) => ({
         videoContainer: {
@@ -36,6 +37,9 @@ const useStyles = makeStyles((theme) => ({
                 maxWidth: '630px',
                 maxHeight: '360px',
                 transition: 'all 0.5s ease',
+        },
+        video:{
+                borderRadius: '20px'
         }
 }))
 
@@ -53,7 +57,7 @@ export default ({ url }) => {
                 <div className={expandVideo ? classes.videoContainerLarge : classes.videoContainer} onClick={handlePlay} style={{
                         
                 }}>
-                        <ReactPlayer volume="0.2" controls='true' url={url} width="630" height="360"></ReactPlayer>
+                        <ReactPlayer className={classes.video} volume="0.2" controls='true' url={url} width="630" height="360"></ReactPlayer>
                 </div>
 
 
