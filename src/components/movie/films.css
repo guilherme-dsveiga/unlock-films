@@ -1,3 +1,3 @@
-video{
+.round-border > video {
         border-radius: 15px;
 }

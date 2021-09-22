@@ -38,9 +38,7 @@ const useStyles = makeStyles((theme) => ({
                 maxHeight: '360px',
                 transition: 'all 0.5s ease',
         },
-        video:{
-                borderRadius: '20px'
-        }
+        
 }))
 
 export default ({ url }) => {
@@ -51,13 +49,12 @@ export default ({ url }) => {
                 setExpandVideo((prev) => !prev)
         }
 
-        let marginSpace = window.innerWidth - 315 - 100
 
         return (
                 <div className={expandVideo ? classes.videoContainerLarge : classes.videoContainer} onClick={handlePlay} style={{
                         
                 }}>
-                        <ReactPlayer className={classes.video} volume="0.2" controls='true' url={url} width="630" height="360"></ReactPlayer>
+                        <ReactPlayer className='round-border' volume="0.2" controls='true' url={url} width="630" height="360"></ReactPlayer>
                 </div>
 
 

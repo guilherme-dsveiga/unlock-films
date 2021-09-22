@@ -133,10 +133,10 @@ export default ({ black, isSmall }) => {
                                         open={Boolean(anchorEl)}
                                         onClose={handleClose}
                                 >
-                                        <MenuItem onClick={handleClose}>Home</MenuItem>
-                                        <MenuItem onClick={handleClose}>Filmes</MenuItem>
-                                        <MenuItem onClick={handleClose}>Sobre nós</MenuItem>
-                                        <MenuItem onClick={handleClose}>Contato</MenuItem>
+                                        <MenuItem onClick={handleClose}><Link className={classes.linkItem} to="/">Home</Link></MenuItem>
+                                        <MenuItem onClick={handleClose}><Link className={classes.linkItem} to="/film">Filmes</Link></MenuItem>
+                                        <MenuItem onClick={handleClose}><Link className={classes.linkItem} to="/">Sobre nós</Link></MenuItem>
+                                        <MenuItem onClick={handleClose}><Link className={classes.linkItem} to="/">Contato</Link></MenuItem>
                                 </Menu>
                         </Toolbar >
                 </AppBar >
