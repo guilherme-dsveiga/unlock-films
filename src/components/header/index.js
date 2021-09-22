@@ -19,6 +19,10 @@ const useStyles = makeStyles((theme) => ({
         appbar: {
                 color: 'white',
                 boxShadow: 'none',
+                [theme.breakpoints.down('sm')]: {
+                        position: 'static!important',
+                        backgroundColor: 'black!important'
+                }
         },
         toolbar: {
                 justifyContent: 'space-evenly',

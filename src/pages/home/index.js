@@ -25,19 +25,24 @@ const useStyles = makeStyles((theme) => ({
                 width: '100%',
                 height: '100%',
                 position: 'relative',
-                cursor: 'pointer'
+                cursor: 'pointer',
+
         },
         backdropVideoVideo: {
                 zIndex: '-1',
                 width: ' 100%!important',
                 height: '100%!important',
-                marginTop: '-4px'
+                marginBottom: '-3px',
+                [theme.breakpoints.down('sm')]: {
+                        marginTop: '-1px'
+                }
+
         },
         homeBanner: {
                 width: ' 100%',
                 height: '50%',
                 objectFit: 'cover',
-                marginTop: '-4px'
+
         },
         homeBannerImg: {
                 width: ' 100%',
@@ -121,7 +126,7 @@ export default () => {
                         <div className={classes.headerVideoWrapper}>
                                 <Header black={blackHeader} />
                                 <div className={classes.backdropVideo} onClick={handleVolume}>
-                                        <ReactPlayer className={classes.backdropVideoVideo} loop='true' url={Video} playing="true" volume={volume}>
+                                        <ReactPlayer className={classes.backdropVideoVideo} pip="false" loop='true' url={Video} playing="true" volume={volume} config={{ file: { attributes: { disablepictureinpicture: 'true' } } }}>
                                         </ReactPlayer>
                                 </div>
                                 <IconButton className={classes.scrollDownButton} onClick={handleScroll} component="span">

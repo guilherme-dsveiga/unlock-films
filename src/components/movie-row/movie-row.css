@@ -1,0 +1,22 @@
+.rec.rec-arrow:hover:enabled {
+        background-color: white!important;
+        color: #333!important;
+}
+
+.rec.rec-arrow:focus:enabled {
+        background-color: white!important;
+        color: #333!important;
+}
+
+.rec.rec-arrow:disabled {
+        visibility: hidden;
+}
+
+button.rec-dot{
+        background-color: rgb(15, 15, 15);
+        box-shadow: 0 0 1px 3px rgba(255, 255, 255, 0.5);
+      }
+      
+      button.rec-dot:hover, button.rec-dot:active, button.rec-dot:focus  {
+        box-shadow: 0 0 1px 3px rgba(78, 78, 78, 0.5);
+      }
