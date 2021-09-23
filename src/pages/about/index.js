@@ -47,13 +47,29 @@ const useStyles = makeStyles((theme) => ({
         single: {
                 display: 'flex',
                 flexDirection: 'row',
+                [theme.breakpoints.down('sm')]: {
+                        flexDirection: 'column',
+                }
+        },
+        singleReverse: {
+                display: 'flex',
+                flexDirection: 'row',
+                [theme.breakpoints.down('sm')]: {
+                        flexDirection: 'column-reverse',
+                }
         },
         textBlock: {
-                paddingInline: theme.spacing(3)
+                paddingInline: theme.spacing(3),
+                [theme.breakpoints.down('sm')]: {
+                        paddingBlock: theme.spacing(3),
+                }
         },
         picture: {
                 width: '50%',
-                height: '100%'
+                height: '100%',
+                [theme.breakpoints.down('sm')]: {
+                        width: '100%',
+                }
         },
         textBlockTypography: {
                 textAlign: 'center',
@@ -118,7 +134,7 @@ export default () => {
                                 <Typography className={classes.typography} variant="h5">E aí, tá esperando o que pra desbloquear o filme pra sua marca?</Typography>
                         </section>
                         <section className={classes.descriptionSection}>
-                                <div className={classes.single}>
+                                <div className={classes.singleReverse}>
                                         <div className={classes.textBlock}>
                                                 <Typography className={classes.textBlockTypography} variant='h3'>Lucas Yuji</Typography>
                                                 <Typography className={classes.textBlockTypography} variant="h5">Shabby chic etsy cray listicle flexitarian taiyaki. Pop-up flannel occupy, tumeric slow-carb meh kombucha. Edison bulb meditation sustainable, meggings hexagon godard forage farm-to-table activated charcoal vape polaroid. Whatever ennui live-edge, hella franzen small batch wayfarers narwhal kombucha man bun 90's lo-fi. Hashtag raclette pickled knausgaard shaman bushwick lo-fi vaporware offal intelligentsia cardigan.</Typography>
