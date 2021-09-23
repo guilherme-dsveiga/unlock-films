@@ -99,7 +99,7 @@ export default ({ black, isSmall }) => {
                                 <div className={classes.showDiv}>
                                         <Link className={classes.linkItem} to="/"><Button className={classes.button}>Home</Button></Link>
                                         <Link className={classes.linkItem} to="/film"><Button className={classes.button}>Filmes</Button></Link>
-                                        <Link className={classes.linkItem} to="/"><Button className={classes.button}>Sobre nós</Button></Link>
+                                        <Link className={classes.linkItem} to="/about"><Button className={classes.button}>Sobre nós</Button></Link>
                                         <Link className={classes.linkItem} to="/"><Button className={classes.button}>Contato</Button></Link>
                                         <Link className={classes.linkItem} to={{ pathname: "https://www.instagram.com/unlockfilms/" }} target="_blank">
                                                 <IconButton color="primary" aria-label="upload picture" component="span">
@@ -135,7 +135,7 @@ export default ({ black, isSmall }) => {
                                 >
                                         <MenuItem onClick={handleClose}><Link className={classes.linkItem} to="/">Home</Link></MenuItem>
                                         <MenuItem onClick={handleClose}><Link className={classes.linkItem} to="/film">Filmes</Link></MenuItem>
-                                        <MenuItem onClick={handleClose}><Link className={classes.linkItem} to="/">Sobre nós</Link></MenuItem>
+                                        <MenuItem onClick={handleClose}><Link className={classes.linkItem} to="/about">Sobre nós</Link></MenuItem>
                                         <MenuItem onClick={handleClose}><Link className={classes.linkItem} to="/">Contato</Link></MenuItem>
                                 </Menu>
                         </Toolbar >

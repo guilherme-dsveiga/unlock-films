@@ -6,40 +6,10 @@ import { Theaters } from '@material-ui/icons';
 import { Typography } from '@material-ui/core';
 import MovieRow from '../../components/movie-row'
 import Footer from '../../components/footer';
+import Banner from '../../components/banner'
 const axios = require('axios');
 
 const useStyles = makeStyles((theme) => ({
-        bgImageWrapper: {
-                width: '100%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-        },
-        bgImage: {
-                width: '100%',
-                position: 'relative'
-        },
-        filmIconWrapper: {
-                position: 'absolute',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                flexDirection: 'column',
-                fontSize: '2.45rem',
-                color: 'white',
-                fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
-                [theme.breakpoints.down('md')]: {
-                        fontSize: '2rem',
-                },
-                [theme.breakpoints.down('sm')]: {
-                        fontSize: '1.5rem',
-                },
-
-        },
-        iconSize: {
-                fontSize: '4rem',
-                display: 'flex'
-        },
         section: {
                 paddingTop: theme.spacing(3),
                 paddingInline: theme.spacing(2),
@@ -93,15 +63,7 @@ export default () => {
                 <div className={classes.filmPage}>
                         <div className={classes.headerBgWrapper}>
                                 <Header black={blackHeader} />
-                                <div className={classes.bgImageWrapper}>
-                                        <img className={classes.bgImage} src={bgImage}></img>
-                                        <div className={classes.filmIconWrapper}>
-                                                <div className={classes.iconSize}>
-                                                        <Theaters fontSize='inherit' />
-                                                </div>
-                                                <label>confira nossos filmes!</label>
-                                        </div>
-                                </div>
+                                <Banner bannerImg={bgImage} icon={<Theaters fontSize='inherit'/>} label='confira nossos filmes!' darkbg={false}/>
                         </div>
                         <section className={classes.section}>
                                 <Typography className={classes.sectionTitle} variant="h3">Fashion Film</Typography>
