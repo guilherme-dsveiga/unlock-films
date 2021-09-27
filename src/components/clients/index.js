@@ -1,12 +1,30 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Button, Typography, Container } from '@material-ui/core';
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import AddIcon from '@material-ui/icons/Add';
+import RemoveIcon from '@material-ui/icons/Remove';
 import Rihappy from '../../assets/gruporihappy.png';
 import Viaskate from '../../assets/viaskate-black.jpeg';
 import Dabdog from '../../assets/dabdog.png';
-import AddIcon from '@material-ui/icons/Add';
+import Jcls from '../../assets/jcls.jpeg';
+import Bomfim from '../../assets/bomfim.png';
+import ToGo from '../../assets/togo-congelados.png';
+import Embakeep from '../../assets/embakeep.png';
+import Subb from '../../assets/subb.png';
+import Six from '../../assets/six.png';
+import VBoat from '../../assets/vboat.png';
+import Prodia from '../../assets/prodia.png';
+import Soulshaker from '../../assets/soul.png';
+import Tazz from '../../assets/tazz.png';
+import Healthlife from '../../assets/healthlife.png';
+import Preo from '../../assets/preo.png';
+import Aseel from '../../assets/aseel.png';
+import Shesko from '../../assets/shesko.png';
+import YgorYtb from '../../assets/ygorYtb.png';
+import Twin from '../../assets/twin.png';
+import Bysis from '../../assets/bysis.png';
+import Boo from '../../assets/boo.png';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -29,29 +47,56 @@ const useStyles = makeStyles((theme) => ({
                 display: 'flex',
                 flexDirection: 'column',
                 paddingBottom: theme.spacing(3),
-                
+
         },
         gridImageContainer: {
                 display: 'flex',
                 justifyContent: 'center',
-                alignItems: 'center'
+                alignItems: 'center',
+                width: '150px',
+                height: '100%'
         },
         gridImage: {
                 width: '100%',
-                height: 'auto',
-                alignSelf: 'center'
+                height: '100%',
+                alignSelf: 'center',
+                transform: 'scale(0.95)',
+                transition: 'all 0.3s ease',
+                '&:hover':{
+                        transform: 'scale(1)'
+                }
         },
-        gridImageResize: {
+        gridImageBlack: {
                 width: '100%',
-                height: 'auto',
+                height: '100%',
+                alignSelf: 'center',
+                backgroundColor: 'black',
+                transform: 'scale(0.95)',
+                transition: 'all 0.3s ease',
+                '&:hover':{
+                        transform: 'scale(1)'
+                }
+        },
+        gridImageBlackPreo:{
+                width: '100%',
+                height: '100%',
+                alignSelf: 'center',
+                backgroundColor: 'black',
+                paddingBlock: theme.spacing(1),
+                paddingInline: theme.spacing(2),
+                transform: 'scale(0.95)',
+                transition: 'all 0.3s ease',
+                '&:hover':{
+                        transform: 'scale(1)'
+                }
         },
         gridContainer: {
                 justifyContent: 'center',
                 alignItems: 'center',
                 marginBottom: theme.spacing(5),
                 [theme.breakpoints.down(500)]: {
-                       display: 'flex',
-                       flexDirection: 'column'
+                        display: 'flex',
+                        flexDirection: 'column'
                 }
         },
         button: {
@@ -67,6 +112,11 @@ const useStyles = makeStyles((theme) => ({
 
 export default () => {
         const classes = useStyles();
+        const [showItem, setShowItem] = useState(false);
+
+        const showMoreItems = () => {
+                setShowItem((prev) => !prev);
+        }
 
         return (
                 <div className={classes.clientsWrapper}>
@@ -77,21 +127,79 @@ export default () => {
                                                 <img className={classes.gridImage} src={Rihappy}></img>
                                         </Grid>
                                         <Grid className={classes.gridImageContainer} item xs={3}>
-                                                <img className={classes.gridImageResize} src={Viaskate}></img>
+                                                <img className={classes.gridImage} src={Viaskate}></img>
                                         </Grid>
                                         <Grid className={classes.gridImageContainer} item xs={3}>
-                                                <img className={classes.gridImageResize} src={Dabdog}></img>
+                                                <img className={classes.gridImage} src={Dabdog}></img>
                                         </Grid>
+
                                         <Grid className={classes.gridImageContainer} item xs={3}>
-                                                <img className={classes.gridImage} src={Rihappy}></img>
+                                                <img className={classes.gridImage} src={Bomfim}></img>
                                         </Grid>
+                                        {showItem ? <>
+                                                <Grid className={classes.gridImageContainer} item xs={3}>
+                                                        <img className={classes.gridImage} src={ToGo}></img>
+                                                </Grid>
+                                                <Grid className={classes.gridImageContainer} item xs={3}>
+                                                        <img className={classes.gridImage} src={Embakeep}></img>
+                                                </Grid>
+                                                <Grid className={classes.gridImageContainer} item xs={3}>
+                                                        <img className={classes.gridImageBlack} src={Aseel}></img>
+                                                </Grid>
+                                                <Grid className={classes.gridImageContainer} item xs={3}>
+                                                        <img className={classes.gridImage} src={Jcls}></img>
+                                                </Grid>
+                                                <Grid className={classes.gridImageContainer} item xs={3}>
+                                                        <img className={classes.gridImage} src={Six}></img>
+                                                </Grid>
+                                                <Grid className={classes.gridImageContainer} item xs={3}>
+                                                        <img className={classes.gridImageBlack} src={Healthlife}></img>
+                                                </Grid>
+                                                <Grid className={classes.gridImageContainer} item xs={3}>
+                                                        <img className={classes.gridImage} src={VBoat}></img>
+                                                </Grid>
+                                                <Grid className={classes.gridImageContainer} item xs={3}>
+                                                        <img className={classes.gridImage} src={Prodia}></img>
+                                                </Grid>
+                                                <Grid className={classes.gridImageContainer} item xs={3}>
+                                                        <img className={classes.gridImage} src={Soulshaker}></img>
+                                                </Grid>
+                                                <Grid className={classes.gridImageContainer} item xs={3}>
+                                                        <img className={classes.gridImageBlack} src={Tazz}></img>
+                                                </Grid>
+                                                <Grid className={classes.gridImageContainer} item xs={3}>
+                                                        <img className={classes.gridImageBlackPreo} src={Preo}></img>
+                                                </Grid>
+                                                <Grid className={classes.gridImageContainer} item xs={3}>
+                                                        <img className={classes.gridImage} src={Subb}></img>
+                                                </Grid>
+
+                                                <Grid className={classes.gridImageContainer} item xs={3}>
+                                                        <img className={classes.gridImageBlack} src={Shesko}></img>
+                                                </Grid>
+                                                <Grid className={classes.gridImageContainer} item xs={3}>
+                                                        <img className={classes.gridImageBlack} src={YgorYtb}></img>
+                                                </Grid>
+                                                <Grid className={classes.gridImageContainer} item xs={3}>
+                                                        <img className={classes.gridImage} src={Twin}></img>
+                                                </Grid>
+                                                <Grid className={classes.gridImageContainer} item xs={3}>
+                                                        <img className={classes.gridImage} src={Boo}></img>
+                                                </Grid>
+                                        </>
+                                                :
+                                                <>
+                                                </>
+                                        }
+
                                 </Grid>
                                 <Button
                                         variant="contained"
                                         className={classes.button}
-                                        startIcon={<AddIcon />}
+                                        startIcon={showItem ? <RemoveIcon /> : <AddIcon />}
+                                        onClick={showMoreItems}
                                 >
-                                        Ver mais
+                                        {showItem ? 'Ver Menos' : 'Ver Mais'}
                                 </Button>
                         </Container>
                 </div>
