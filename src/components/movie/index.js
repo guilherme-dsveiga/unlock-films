@@ -44,7 +44,7 @@ export default ({ url }) => {
                 <div className={expandVideo ? classes.videoContainerLarge : classes.videoContainer} onClick={handlePlay} style={{
                         
                 }}>
-                        <ReactPlayer className='round-border' pip='false' volume="0.2" controls='true' url={url} width="630" height="360"></ReactPlayer>
+                        <ReactPlayer className='round-border' pip='false' volume="0.2" controls='true' url={url}></ReactPlayer>
                 </div>
 
 

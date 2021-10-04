@@ -8,9 +8,6 @@
         color: #333!important;
 }
 
-.rec.rec-arrow:disabled {
-        visibility: hidden;
-}
 
 button.rec-dot{
         background-color: rgb(15, 15, 15);

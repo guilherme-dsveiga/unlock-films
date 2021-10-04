@@ -11,7 +11,7 @@ const axios = require('axios');
 
 const useStyles = makeStyles((theme) => ({
         section: {
-                paddingTop: theme.spacing(3),
+                paddingBlock: theme.spacing(2),
                 paddingInline: theme.spacing(2),
                 textAlign: 'center'
         },
@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 export default () => {
         const classes = useStyles();
 
-        const [blackHeader, setBlackHeader] = useState(false);
+        const [blackHeader, setBlackHeader] = useState(true);
         const [postInfo, setPostInfo] = useState();
 
         useEffect(() => {
@@ -43,27 +43,11 @@ export default () => {
                 getPostsInfo();
         }, []);
 
-        useEffect(() => {
-                const scrollListener = () => {
-                        if (window.scrollY > 150) {
-                                setBlackHeader(true);
-                        } else {
-                                setBlackHeader(false);
-                        }
-                }
-
-                window.addEventListener('scroll', scrollListener);
-
-                return () => {
-                        window.removeEventListener('scroll', scrollListener);
-                }
-        }, []);
-
         return (
                 <div className={classes.filmPage}>
                         <div className={classes.headerBgWrapper}>
                                 <Header black={blackHeader} />
-                                <Banner bannerImg={bgImage} icon={<Theaters fontSize='inherit'/>} label='confira nossos filmes!' darkbg={false}/>
+                                <Banner bannerImg={bgImage} icon={<Theaters fontSize='inherit' />} label='confira nossos filmes!' darkbg={false} />
                         </div>
                         <section className={classes.section}>
                                 <Typography className={classes.sectionTitle} variant="h3">Campanhas</Typography>
