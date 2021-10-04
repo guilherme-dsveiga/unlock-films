@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import ReactPlayer from "react-player";
-import thumbnail from '../../assets/thumbnail.png';
-import PlayCircleOutlineIcon from '@material-ui/icons/PlayCircleOutline';
-import clsx from 'clsx';
-import IconButton from '@material-ui/core/IconButton';
 import './films.css';
 
 const useStyles = makeStyles((theme) => ({
@@ -14,9 +10,6 @@ const useStyles = makeStyles((theme) => ({
                 alignItems: 'center',
                 justifyContent: 'center',
                 position: 'relative',
-                transform: 'scale(0.9)',
-                maxWidth: '630px',
-                maxHeight: '360px',
                 transition: 'all 0.5s ease',
         },
         thumbnailImg: {
@@ -33,9 +26,6 @@ const useStyles = makeStyles((theme) => ({
                 alignItems: 'center',
                 justifyContent: 'center',
                 position: 'relative',
-                transform: 'scale(1)',
-                maxWidth: '630px',
-                maxHeight: '360px',
                 transition: 'all 0.5s ease',
         },
         
