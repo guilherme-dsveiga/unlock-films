@@ -66,20 +66,32 @@ export default () => {
                                 <Banner bannerImg={bgImage} icon={<Theaters fontSize='inherit'/>} label='confira nossos filmes!' darkbg={false}/>
                         </div>
                         <section className={classes.section}>
+                                <Typography className={classes.sectionTitle} variant="h3">Campanhas</Typography>
+                                <MovieRow campaign='campanhas' />
+                        </section>
+                        <section className={classes.section}>
                                 <Typography className={classes.sectionTitle} variant="h3">Fashion Film</Typography>
-                                <MovieRow />
+                                <MovieRow campaign='fashion' />
                         </section>
                         <section className={classes.section}>
                                 <Typography className={classes.sectionTitle} variant="h3">Institucional</Typography>
-                                <MovieRow />
+                                <MovieRow campaign='institucional' />
+                        </section>
+                        <section className={classes.section}>
+                                <Typography className={classes.sectionTitle} variant="h3">Esportes</Typography>
+                                <MovieRow campaign='esportes' />
                         </section>
                         <section className={classes.section}>
                                 <Typography className={classes.sectionTitle} variant="h3">Aftermovie</Typography>
-                                <MovieRow />
+                                <MovieRow campaign='aftermovie' />
                         </section>
                         <section className={classes.section}>
-                                <Typography className={classes.sectionTitle} variant="h3">Campanhas</Typography>
-                                <MovieRow />
+                                <Typography className={classes.sectionTitle} variant="h3">Clipe</Typography>
+                                <MovieRow campaign='clipe' />
+                        </section>
+                        <section className={classes.section}>
+                                <Typography className={classes.sectionTitle} variant="h3">Food</Typography>
+                                <MovieRow campaign='food' />
                         </section>
                         <Footer postData={postInfo} />
                 </div>
