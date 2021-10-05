@@ -11,6 +11,9 @@ const useStyles = makeStyles((theme) => ({
                 justifyContent: 'center',
                 position: 'relative',
                 transition: 'all 0.5s ease',
+                [theme.breakpoints.down('sm')]:{
+                        maxWidth: '100%!important',
+                }
         },
         thumbnailImg: {
                 width: '100%',

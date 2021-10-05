@@ -44,11 +44,13 @@ const useStyles = makeStyles((theme) => ({
         },
 }))
 
-export default ({ bannerImg, icon, label, darkbg }) => {
+export default ({ bannerImg, icon, label, darkbg, marginTop }) => {
         const classes = useStyles();
 
         return (
-                <div className={darkbg ? classes.bgImageWrapperDark : classes.bgImageWrapper}>
+                <div className={darkbg ? classes.bgImageWrapperDark : classes.bgImageWrapper} style={{
+                        marginTop: marginTop ? '124px' : '0',
+                }}>
                         <img className={classes.bgImage} src={bannerImg}></img>
                         <div className={classes.filmIconWrapper}>
                                 <div className={classes.iconSize}>

@@ -101,7 +101,6 @@ export default () => {
                         const url = await getToken()
                         axios.get(url).then(function (response) {
                                 setPostInfo(response.data.data);
-                                console.log(response.data.data)
                         })
                 }
 

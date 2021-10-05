@@ -36,7 +36,6 @@ export default () => {
                         const url = await getToken()
                         axios.get(url).then(function (response) {
                                 setPostInfo(response.data.data);
-                                console.log(response.data.data)
                         })
                 }
 
@@ -46,8 +45,8 @@ export default () => {
         return (
                 <div className={classes.filmPage}>
                         <div className={classes.headerBgWrapper}>
-                                <Header black={blackHeader} />
-                                <Banner bannerImg={bgImage} icon={<Theaters fontSize='inherit' />} label='confira nossos filmes!' darkbg={false} />
+                                <Header  black={blackHeader} />
+                                <Banner className={classes.banner} bannerImg={bgImage} icon={<Theaters fontSize='inherit' />} label='confira nossos filmes!' darkbg={false} marginTop={true} />
                         </div>
                         <section className={classes.section}>
                                 <Typography className={classes.sectionTitle} variant="h3">Campanhas</Typography>
