@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
                 }
         },
         descriptionSection: {
-                paddingTop: theme.spacing(2),
+                marginTop: '-4px',
                 display: 'flex',
                 flexDirection: 'column'
         },
@@ -148,13 +148,6 @@ export default () => {
                         <div className={classes.homeBanner}>
                                 <img className={classes.homeBannerImg} src={brothersBanner}></img>
                         </div>
-                        <section className={classes.textSection}>
-                                <Typography className={classes.typography} variant="h5">Somos dois irmãos que a partir da nossa paixão pelo mundo do audiovisual, resolvemos unir o útil ao agradável e criamos a Unlock Films, uma produtora audiovisual especializada em vídeos.</Typography>
-                                <Typography className={classes.typography} variant="h5">Como o nome diz, nossa proposta é desbloquear novos horizontes para o cliente, oferecendo conteúdos criativos e vídeos diferenciados para ajudar você e sua marca a se destacar no mercado.</Typography>
-                                <Typography className={classes.typography} variant="h5">Produzimos filmes institucionais, fashion films, vídeos para redes sociais e Youtube, clipes musicais, aftermovies de eventos, entre outras produções.</Typography>
-                                <Typography className={classes.typography} variant="h5">Cada Job tem sua pré-produção e pós-produção, onde envolve planejamento, roteiro, direção, captação, edição e finalização, transformando em algo exclusivo.</Typography>
-                                <Typography className={classes.typography} variant="h5">E aí, tá esperando o que pra desbloquear o filme pra sua marca?</Typography>
-                        </section>
                         <section className={classes.descriptionSection}>
                                 <div className={classes.singleReverse}>
                                         <div className={classes.textBlock}>

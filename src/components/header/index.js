@@ -14,6 +14,7 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuIcon from '@material-ui/icons/Menu';
 import './header.css';
+import ScrollToTop from '../scrollToTop';
 
 const useStyles = makeStyles((theme) => ({
         appbar: {
@@ -97,6 +98,7 @@ export default ({ black, isSmall }) => {
                                         </IconButton>
                                 </Link>
                                 <div className={classes.showDiv}>
+                                        <ScrollToTop />
                                         <Link className={classes.linkItem} to="/"><Button className={classes.button}>Home</Button></Link>
                                         <Link className={classes.linkItem} to="/film"><Button className={classes.button}>Filmes</Button></Link>
                                         <Link className={classes.linkItem} to="/about"><Button className={classes.button}>Sobre nós</Button></Link>
@@ -108,7 +110,7 @@ export default ({ black, isSmall }) => {
                                                         </Icon>
                                                 </IconButton>
                                         </Link>
-                                        <Link className={classes.linkItem} to="/">
+                                        <Link className={classes.linkItem} to={{ pathname: "https://www.youtube.com/channel/UCB8S7Wz0Y5ouw4D5fWCRzTw" }} target="_blank">
                                                 <IconButton color="primary" aria-label="upload picture" component="span">
                                                         <Icon classes={{ root: classes.iconRoot }}>
                                                                 <img className={classes.imageIcon} src={YoutubeIcon} />

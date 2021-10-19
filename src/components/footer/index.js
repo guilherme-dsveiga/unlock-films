@@ -152,14 +152,7 @@ export default ({ postData }) => {
                                                                 className={classes.contactButton}
                                                                 startIcon={<WhatsAppIcon />}
                                                         >
-                                                                (00) 0000-0000
-                                                        </Button>
-                                                        <Button
-                                                                color="inherit"
-                                                                className={classes.contactButton}
-                                                                startIcon={<WhatsAppIcon />}
-                                                        >
-                                                                (00) 0000-0000
+                                                                (13) 99676-2454
                                                         </Button>
                                                 </div>
                                         </div>
