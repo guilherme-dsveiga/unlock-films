@@ -90,7 +90,6 @@ const useStyles = makeStyles((theme) => ({
 export default () => {
         const classes = useStyles();
 
-        const [postInfo, setPostInfo] = useState();
         const [blackHeader, setBlackHeader] = useState(false);
         const [volume, setVolume] = useState('0');
 
@@ -110,22 +109,6 @@ export default () => {
                 return () => {
                         window.removeEventListener('scroll', scrollListener);
                 }
-        }, []);
-
-        useEffect(() => {
-                const getPostsInfo = async () => {
-                        const getToken = async () => {
-                                const instagramToken = await fetch('https://ig.instant-tokens.com/users/3b35b858-12c7-47d0-b1ff-3c3d9467809d/instagram/17841421110663076/token?userSecret=ifanstoaihr16010givp6v').then((res) => res.json());
-                                const url = "https://graph.instagram.com/me/media?access_token=" + instagramToken.Token.toString() + "&fields=media_url,media_type,permalink,thumbnail_url"
-                                return url;
-                        }
-                        const url = await getToken()
-                        axios.get(url).then(function (response) {
-                                setPostInfo(response.data.data);
-                        })
-                }
-
-                getPostsInfo();
         }, []);
 
         const handleScroll = () => {
@@ -162,12 +145,12 @@ export default () => {
                                 </IconButton>
                         </div>
                         <div className={classes.homeBanner}>
-                                <img className={classes.homeBannerImg} src={homeBanner}></img>
+                                <img className={classes.homeBannerImg} src={homeBanner} alt="Film maker mostrando um video em uma camera para uma pessoa"></img>
                         </div>
                         <div ref={myRef}></div>
                         <ImageTextContainer image={Placeholder} title="Sobre nós" text={aboutText} buttonText="Ver mais" buttonIcon={<AddIcon />} />
                         <Clients />
-                        <Footer postData={postInfo} />
+                        <Footer />
                 </div>
         );
 }

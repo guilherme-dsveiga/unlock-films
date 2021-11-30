@@ -8,7 +8,10 @@ const useStyles = makeStyles((theme) => ({
                 alignItems: 'center',
                 justifyContent: 'center',
                 backgroundColor: 'rgba(0,0,0,0.5)',
-                zIndex: '999'
+                zIndex: '999',
+                [theme.breakpoints.down('sm')]: {
+                        marginTop: '124px'
+                }
         },
         bgImageWrapper: {
                 width: '100%',
@@ -48,9 +51,7 @@ export default ({ bannerImg, icon, label, darkbg, marginTop }) => {
         const classes = useStyles();
 
         return (
-                <div className={darkbg ? classes.bgImageWrapperDark : classes.bgImageWrapper} style={{
-                        marginTop: marginTop ? '124px' : '0',
-                }}>
+                <div className={darkbg ? classes.bgImageWrapperDark : classes.bgImageWrapper}>
                         <img className={classes.bgImage} src={bannerImg}></img>
                         <div className={classes.filmIconWrapper}>
                                 <div className={classes.iconSize}>

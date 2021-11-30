@@ -168,7 +168,7 @@ export default () => {
                                         </div>
                                 </div>
                         </section>
-                        <Footer postData={postInfo} />
+                        <Footer />
                 </div>
         )
 }

@@ -24,23 +24,6 @@ export default () => {
         const classes = useStyles();
 
         const [blackHeader, setBlackHeader] = useState(true);
-        const [postInfo, setPostInfo] = useState();
-
-        useEffect(() => {
-                const getPostsInfo = async () => {
-                        const getToken = async () => {
-                                const instagramToken = await fetch('https://ig.instant-tokens.com/users/3b35b858-12c7-47d0-b1ff-3c3d9467809d/instagram/17841421110663076/token?userSecret=ifanstoaihr16010givp6v').then((res) => res.json());
-                                const url = "https://graph.instagram.com/me/media?access_token=" + instagramToken.Token.toString() + "&fields=media_url,media_type,permalink,thumbnail_url"
-                                return url;
-                        }
-                        const url = await getToken()
-                        axios.get(url).then(function (response) {
-                                setPostInfo(response.data.data);
-                        })
-                }
-
-                getPostsInfo();
-        }, []);
 
         return (
                 <div className={classes.filmPage}>
@@ -76,7 +59,7 @@ export default () => {
                                 <Typography className={classes.sectionTitle} variant="h3">Food</Typography>
                                 <MovieRow campaign='food' />
                         </section>
-                        <Footer postData={postInfo} />
+                        <Footer />
                 </div>
         )
 }

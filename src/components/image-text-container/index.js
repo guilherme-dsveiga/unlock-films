@@ -25,23 +25,24 @@ const useStyles = makeStyles((theme) => ({
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
-                alignItems: 'center',
+                alignItems: 'flex-start',
         },
         typographyTitle: {
                 fontSize: '2.3rem',
                 fontWeight: '700',
                 color: 'black',
                 [theme.breakpoints.down('sm')]: {
-                        marginBlock: theme.spacing(3),
+                        marginBlock: theme.spacing(1),
                 }
         },
         typography: {
-                marginBlock: theme.spacing(4),
-                textAlign: 'center',
+                marginTop: theme.spacing(1),
+                marginBottom: theme.spacing(2),
+                textAlign: 'left',
                 fontSize: '1.3rem',
                 color: 'black',
-                [theme.breakpoints.down('sm')]: {
-                        marginBlock: theme.spacing(3),
+                [theme.breakpoints.down('md')]: {
+                        marginBlock: theme.spacing(2),
                 }
         },
         buttonContainer: {

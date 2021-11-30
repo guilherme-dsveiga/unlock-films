@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
                 color: 'white',
                 boxShadow: 'none',
                 [theme.breakpoints.down('sm')]: {
-                        position: 'static!important',
+
                         backgroundColor: 'black!important'
                 }
         },
@@ -102,7 +102,7 @@ export default ({ black, isSmall }) => {
                                         <Link className={classes.linkItem} to="/"><Button className={classes.button}>Home</Button></Link>
                                         <Link className={classes.linkItem} to="/film"><Button className={classes.button}>Filmes</Button></Link>
                                         <Link className={classes.linkItem} to="/about"><Button className={classes.button}>Sobre nós</Button></Link>
-                                        <Link className={classes.linkItem} to="/"><Button className={classes.button}>Contato</Button></Link>
+                                        <Link className={classes.linkItem} to="/contact"><Button className={classes.button}>Contato</Button></Link>
                                         <Link className={classes.linkItem} to={{ pathname: "https://www.instagram.com/unlockfilms/" }} target="_blank">
                                                 <IconButton color="primary" aria-label="upload picture" component="span">
                                                         <Icon classes={{ root: classes.iconRoot }}>
@@ -144,20 +144,3 @@ export default ({ black, isSmall }) => {
                 </AppBar >
         );
 }
-
-/*
-<IconButton edge="start" color="inherit" aria-label="menu" onClick={handleClick}>
-                                        <MenuIcon />
-                                </IconButton>
-                                <Menu
-                                        id="simple-menu"
-                                        anchorEl={anchorEl}
-                                        keepMounted
-                                        open={Boolean(anchorEl)}
-                                        onClose={handleClose}
-                                >
-                                        <MenuItem onClick={handleClose}>Profile</MenuItem>
-                                        <MenuItem onClick={handleClose}>My account</MenuItem>
-                                        <MenuItem onClick={handleClose}>Logout</MenuItem>
-                                </Menu>
-*/
