@@ -53,10 +53,11 @@ const useStyles = makeStyles((theme) => ({
                 height: '100%',
         },
         imageIcon: {
-                height: '100%'
+                width: '100%'
         },
         iconRoot: {
-                textAlign: 'center'
+                textAlign: 'center',
+                height: '1.1em'
         },
         showDiv: {
                 display: 'block',
@@ -91,7 +92,7 @@ export default ({ black, isSmall }) => {
                 <AppBar position="fixed" className={black ? 'bg-black' : classes.appbar} color="transparent">
                         <Toolbar className={classes.toolbar}>
                                 <Link className={classes.linkItem} to="/">
-                                        <IconButton color="primary" aria-label="upload picture" component="span">
+                                        <IconButton color="primary" aria-label="Icone do logo   " component="span">
                                                 <Icon classes={{ root: classes.logoRoot }}>
                                                         <img className={classes.logoIcon} src={UnlockLogo} />
                                                 </Icon>
@@ -104,21 +105,21 @@ export default ({ black, isSmall }) => {
                                         <Link className={classes.linkItem} to="/about"><Button className={classes.button}>Sobre nós</Button></Link>
                                         <Link className={classes.linkItem} to="/contact"><Button className={classes.button}>Contato</Button></Link>
                                         <Link className={classes.linkItem} to={{ pathname: "https://www.instagram.com/unlockfilms/" }} target="_blank">
-                                                <IconButton color="primary" aria-label="upload picture" component="span">
+                                                <IconButton color="primary" aria-label="instagram icon" component="span">
                                                         <Icon classes={{ root: classes.iconRoot }}>
                                                                 <img className={classes.imageIcon} src={InstagramIcon} />
                                                         </Icon>
                                                 </IconButton>
                                         </Link>
                                         <Link className={classes.linkItem} to={{ pathname: "https://www.youtube.com/channel/UCB8S7Wz0Y5ouw4D5fWCRzTw" }} target="_blank">
-                                                <IconButton color="primary" aria-label="upload picture" component="span">
+                                                <IconButton color="primary" aria-label="youtube icon" component="span">
                                                         <Icon classes={{ root: classes.iconRoot }}>
                                                                 <img className={classes.imageIcon} src={YoutubeIcon} />
                                                         </Icon>
                                                 </IconButton>
                                         </Link >
-                                        <Link className={classes.linkItem} to={{ pathname: "https://vimeo.com/unlockfilms" }}>
-                                                <IconButton color="primary" aria-label="upload picture" component="span">
+                                        <Link className={classes.linkItem} to={{ pathname: "https://vimeo.com/unlockfilms" }} target="_blank">
+                                                <IconButton color="primary" aria-label="vimeo icon" component="span">
                                                         <Icon classes={{ root: classes.iconRoot }}>
                                                                 <img className={classes.imageIcon} src={VimeoIcon} />
                                                         </Icon>

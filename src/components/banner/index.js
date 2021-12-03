@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
@@ -47,12 +47,12 @@ const useStyles = makeStyles((theme) => ({
         },
 }))
 
-export default ({ bannerImg, icon, label, darkbg, marginTop }) => {
+const Banner = ({ bannerImg, icon, label, darkbg, marginTop, alt }) => {
         const classes = useStyles();
 
         return (
                 <div className={darkbg ? classes.bgImageWrapperDark : classes.bgImageWrapper}>
-                        <img className={classes.bgImage} src={bannerImg}></img>
+                        <img className={classes.bgImage} src={bannerImg} alt={alt}></img>
                         <div className={classes.filmIconWrapper}>
                                 <div className={classes.iconSize}>
                                         {icon}
@@ -62,3 +62,5 @@ export default ({ bannerImg, icon, label, darkbg, marginTop }) => {
                 </div>
         )
 }
+
+export default Banner;
