@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Header from '../../components/header';
 import bgImage from '../../assets/film-background.jpg';
@@ -7,7 +7,6 @@ import { Typography } from '@material-ui/core';
 import MovieRow from '../../components/movie-row'
 import Footer from '../../components/footer';
 import Banner from '../../components/banner'
-const axios = require('axios');
 
 const useStyles = makeStyles((theme) => ({
         section: {
@@ -20,15 +19,12 @@ const useStyles = makeStyles((theme) => ({
         }
 }))
 
-export default () => {
+const Films =  () => {
         const classes = useStyles();
-
-        const [blackHeader, setBlackHeader] = useState(true);
-
         return (
                 <div className={classes.filmPage}>
                         <div className={classes.headerBgWrapper}>
-                                <Header  black={blackHeader} />
+                                <Header  black={true} />
                                 <Banner className={classes.banner} bannerImg={bgImage} icon={<Theaters fontSize='inherit' />} label='confira nossos filmes!' darkbg={false} marginTop={true} />
                         </div>
                         <section className={classes.section}>
@@ -63,3 +59,5 @@ export default () => {
                 </div>
         )
 }
+
+export default Films;

@@ -4,27 +4,21 @@ import { Button, Typography, Container } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import AddIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Remove';
-import Rihappy from '../../assets/gruporihappy.png';
-import Viaskate from '../../assets/viaskate-black.jpeg';
-import Dabdog from '../../assets/dabdog.png';
-import Jcls from '../../assets/jcls.jpeg';
-import Bomfim from '../../assets/bomfim.png';
-import ToGo from '../../assets/togo-congelados.png';
-import Embakeep from '../../assets/embakeep.png';
-import Subb from '../../assets/subb.png';
+import Australian from '../../assets/australian.png';
+import Bacardi from '../../assets/bacardi.png';
+import Bublet from '../../assets/bublet.png';
+import Igana from '../../assets/igana.png';
+import Layback from '../../assets/layback.png';
+import Pivot from '../../assets/pivot.png';
+import PizzaCo from '../../assets/pizzaco.png';
+import Qualeh from '../../assets/qualeh.png';
+import SDB from '../../assets/sdb.png';
 import Six from '../../assets/six.png';
-import VBoat from '../../assets/vboat.png';
-import Prodia from '../../assets/prodia.png';
-import Soulshaker from '../../assets/soul.png';
-import Tazz from '../../assets/tazz.png';
-import Healthlife from '../../assets/healthlife.png';
-import Preo from '../../assets/preo.png';
-import Aseel from '../../assets/aseel.png';
-import Shesko from '../../assets/shesko.png';
-import YgorYtb from '../../assets/ygorYtb.png';
+import Surftrunk from '../../assets/surftrunk.png';
+import Tole from '../../assets/tole.png';
 import Twin from '../../assets/twin.png';
-import Bysis from '../../assets/bysis.png';
-import Boo from '../../assets/boo.png';
+import Via from '../../assets/via.png';
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -67,28 +61,17 @@ const useStyles = makeStyles((theme) => ({
                 }
         },
         gridImageBlack: {
-                width: '100%',
-                height: '100%',
+                width: '275px',
+                height: '275px',
+                padding: '1rem',
                 alignSelf: 'center',
                 backgroundColor: 'black',
                 transform: 'scale(0.95)',
                 transition: 'all 0.3s ease',
                 '&:hover': {
                         transform: 'scale(1)'
-                }
-        },
-        gridImageBlackPreo: {
-                width: '100%',
-                height: '100%',
-                alignSelf: 'center',
-                backgroundColor: 'black',
-                paddingBlock: theme.spacing(1),
-                paddingInline: theme.spacing(2),
-                transform: 'scale(0.95)',
-                transition: 'all 0.3s ease',
-                '&:hover': {
-                        transform: 'scale(1)'
-                }
+                },
+                objectFit: 'contain'
         },
         gridContainer: {
                 justifyContent: 'center',
@@ -124,67 +107,48 @@ const Clients = () => {
                                 <Typography variant='h4' className={classes.ourClients}>NOSSOS CLIENTES</Typography>
                                 <Grid className={classes.gridContainer} container spacing={3}>
                                         <Grid className={classes.gridImageContainer} item xs={3}>
-                                                <img className={classes.gridImage} src={Rihappy} alt="Logo de cliente"></img>
+                                                <img className={classes.gridImageBlack} src={Australian} alt="Logo de cliente"></img>
                                         </Grid>
                                         <Grid className={classes.gridImageContainer} item xs={3}>
-                                                <img className={classes.gridImage} src={Viaskate} alt="Logo de cliente"></img>
+                                                <img className={classes.gridImageBlack} src={Bacardi} alt="Logo de cliente"></img>
                                         </Grid>
                                         <Grid className={classes.gridImageContainer} item xs={3}>
-                                                <img className={classes.gridImage} src={Dabdog} alt="Logo de cliente"></img>
+                                                <img className={classes.gridImageBlack} src={Bublet} alt="Logo de cliente"></img>
                                         </Grid>
 
                                         <Grid className={classes.gridImageContainer} item xs={3}>
-                                                <img className={classes.gridImage} src={Bomfim} alt="Logo de cliente"></img>
+                                                <img className={classes.gridImageBlack} src={Igana} alt="Logo de cliente"></img>
                                         </Grid>
                                         {showItem ? <>
                                                 <Grid className={classes.gridImageContainer} item xs={3}>
-                                                        <img className={classes.gridImage} src={ToGo} alt="Logo de cliente"></img>
+                                                        <img className={classes.gridImageBlack} src={Layback} alt="Logo de cliente"></img>
                                                 </Grid>
                                                 <Grid className={classes.gridImageContainer} item xs={3}>
-                                                        <img className={classes.gridImage} src={Embakeep} alt="Logo de cliente"></img>
+                                                        <img className={classes.gridImageBlack} src={Pivot} alt="Logo de cliente"></img>
                                                 </Grid>
                                                 <Grid className={classes.gridImageContainer} item xs={3}>
-                                                        <img className={classes.gridImageBlack} src={Aseel} alt="Logo de cliente"></img>
+                                                        <img className={classes.gridImageBlack} src={PizzaCo} alt="Logo de cliente"></img>
                                                 </Grid>
                                                 <Grid className={classes.gridImageContainer} item xs={3}>
-                                                        <img className={classes.gridImage} src={Jcls} alt="Logo de cliente"></img>
+                                                        <img className={classes.gridImageBlack} src={Qualeh} alt="Logo de cliente"></img>
                                                 </Grid>
                                                 <Grid className={classes.gridImageContainer} item xs={3}>
-                                                        <img className={classes.gridImage} src={Six} alt="Logo de cliente"></img>
+                                                        <img className={classes.gridImageBlack} src={SDB} alt="Logo de cliente"></img>
                                                 </Grid>
                                                 <Grid className={classes.gridImageContainer} item xs={3}>
-                                                        <img className={classes.gridImageBlack} src={Healthlife} alt="Logo de cliente"></img>
+                                                        <img className={classes.gridImageBlack} src={Six} alt="Logo de cliente"></img>
                                                 </Grid>
                                                 <Grid className={classes.gridImageContainer} item xs={3}>
-                                                        <img className={classes.gridImage} src={VBoat} alt="Logo de cliente"></img>
+                                                        <img className={classes.gridImageBlack} src={Surftrunk} alt="Logo de cliente"></img>
                                                 </Grid>
                                                 <Grid className={classes.gridImageContainer} item xs={3}>
-                                                        <img className={classes.gridImage} src={Prodia} alt="Logo de cliente"></img>
+                                                        <img className={classes.gridImageBlack} src={Tole} alt="Logo de cliente"></img>
                                                 </Grid>
                                                 <Grid className={classes.gridImageContainer} item xs={3}>
-                                                        <img className={classes.gridImage} src={Soulshaker} alt="Logo de cliente"></img>
+                                                        <img className={classes.gridImageBlack} src={Twin} alt="Logo de cliente"></img>
                                                 </Grid>
                                                 <Grid className={classes.gridImageContainer} item xs={3}>
-                                                        <img className={classes.gridImageBlack} src={Tazz} alt="Logo de cliente"></img>
-                                                </Grid>
-                                                <Grid className={classes.gridImageContainer} item xs={3}>
-                                                        <img className={classes.gridImageBlackPreo} src={Preo} alt="Logo de cliente"></img>
-                                                </Grid>
-                                                <Grid className={classes.gridImageContainer} item xs={3}>
-                                                        <img className={classes.gridImage} src={Subb} alt="Logo de cliente"></img>
-                                                </Grid>
-
-                                                <Grid className={classes.gridImageContainer} item xs={3}>
-                                                        <img className={classes.gridImageBlack} src={Shesko} alt="Logo de cliente"></img>
-                                                </Grid>
-                                                <Grid className={classes.gridImageContainer} item xs={3}>
-                                                        <img className={classes.gridImageBlack} src={YgorYtb} alt="Logo de cliente"></img>
-                                                </Grid>
-                                                <Grid className={classes.gridImageContainer} item xs={3}>
-                                                        <img className={classes.gridImage} src={Twin} alt="Logo de cliente"></img>
-                                                </Grid>
-                                                <Grid className={classes.gridImageContainer} item xs={3}>
-                                                        <img className={classes.gridImage} src={Boo} alt="Logo de cliente"></img>
+                                                        <img className={classes.gridImageBlack} src={Via} alt="Logo de cliente"></img>
                                                 </Grid>
                                         </>
                                                 :
