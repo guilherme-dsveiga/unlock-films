@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './home.css';
-import ScrollToTop from '../../components/scrollToTop';
 import Header from '../../components/header';
 import ImageTextContainer from '../../components/image-text-container';
 import Clients from '../../components/clients';
@@ -11,10 +10,8 @@ import homeBanner from '../../assets/home-banner.jpg';
 import IconButton from '@material-ui/core/IconButton';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import AddIcon from '@material-ui/icons/Add';
-import { Typography, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import ReactPlayer from 'react-player';
-const axios = require('axios');
 
 const useStyles = makeStyles((theme) => ({
         app: {
@@ -87,7 +84,7 @@ const useStyles = makeStyles((theme) => ({
         },
 }));
 
-export default () => {
+const Home = () => {
         const classes = useStyles();
 
         const [blackHeader, setBlackHeader] = useState(false);
@@ -116,7 +113,7 @@ export default () => {
         }
 
         const handleVolume = () => {
-                if (volume == '0.2') {
+                if (volume === '0.2') {
                         setVolume('0');
                 } else {
                         setVolume('0.2');
@@ -154,3 +151,6 @@ export default () => {
                 </div>
         );
 }
+
+
+export default Home;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { Button, Typography } from '@material-ui/core';
+import { Link } from "react-router-dom";
+import { Button } from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -13,8 +13,8 @@ import Icon from '@material-ui/core/Icon';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuIcon from '@material-ui/icons/Menu';
-import './header.css';
 import ScrollToTop from '../scrollToTop';
+import './header.css';
 
 const useStyles = makeStyles((theme) => ({
         appbar: {
@@ -75,7 +75,7 @@ const useStyles = makeStyles((theme) => ({
                 textDecoration: 'none'
         }
 }));
-export default ({ black, isSmall }) => {
+const Header = ({ black, isSmall }) => {
         const classes = useStyles();
 
         const [anchorEl, setAnchorEl] = useState(null);
@@ -92,9 +92,9 @@ export default ({ black, isSmall }) => {
                 <AppBar position="fixed" className={black ? 'bg-black' : classes.appbar} color="transparent">
                         <Toolbar className={classes.toolbar}>
                                 <Link className={classes.linkItem} to="/">
-                                        <IconButton color="primary" aria-label="Icone do logo   " component="span">
+                                        <IconButton color="primary" aria-label="Icone do logo" component="span">
                                                 <Icon classes={{ root: classes.logoRoot }}>
-                                                        <img className={classes.logoIcon} src={UnlockLogo} />
+                                                        <img className={classes.logoIcon} src={UnlockLogo} alt="Icone da Unlock Films" />
                                                 </Icon>
                                         </IconButton>
                                 </Link>
@@ -107,21 +107,21 @@ export default ({ black, isSmall }) => {
                                         <Link className={classes.linkItem} to={{ pathname: "https://www.instagram.com/unlockfilms/" }} target="_blank">
                                                 <IconButton color="primary" aria-label="instagram icon" component="span">
                                                         <Icon classes={{ root: classes.iconRoot }}>
-                                                                <img className={classes.imageIcon} src={InstagramIcon} />
+                                                                <img className={classes.imageIcon} src={InstagramIcon} alt="Icone do Instagram"/>
                                                         </Icon>
                                                 </IconButton>
                                         </Link>
                                         <Link className={classes.linkItem} to={{ pathname: "https://www.youtube.com/channel/UCB8S7Wz0Y5ouw4D5fWCRzTw" }} target="_blank">
                                                 <IconButton color="primary" aria-label="youtube icon" component="span">
                                                         <Icon classes={{ root: classes.iconRoot }}>
-                                                                <img className={classes.imageIcon} src={YoutubeIcon} />
+                                                                <img className={classes.imageIcon} src={YoutubeIcon} alt="Icone do Youtube"/>
                                                         </Icon>
                                                 </IconButton>
                                         </Link >
                                         <Link className={classes.linkItem} to={{ pathname: "https://vimeo.com/unlockfilms" }} target="_blank">
                                                 <IconButton color="primary" aria-label="vimeo icon" component="span">
                                                         <Icon classes={{ root: classes.iconRoot }}>
-                                                                <img className={classes.imageIcon} src={VimeoIcon} />
+                                                                <img className={classes.imageIcon} src={VimeoIcon} alt="Icone da Vimeo"/>
                                                         </Icon>
                                                 </IconButton>
                                         </Link>
@@ -145,3 +145,5 @@ export default ({ black, isSmall }) => {
                 </AppBar >
         );
 }
+
+export default Header;

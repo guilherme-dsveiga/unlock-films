@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import ReactPlayer from "react-player";
 import './films.css';
@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
         
 }))
 
-export default ({ url }) => {
+const Movie = ({ url }) => {
         const classes = useStyles();
         const [expandVideo, setExpandVideo] = useState(false)
 
@@ -53,3 +53,5 @@ export default ({ url }) => {
 
         );
 }
+
+export default Movie;

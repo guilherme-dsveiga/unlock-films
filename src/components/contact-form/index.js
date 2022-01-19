@@ -1,6 +1,5 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import emailkey from '../../emailkey';
 import emailjs from 'emailjs-com'
 
 const useStyles = makeStyles((theme) => ({
@@ -58,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
         }
 }))
 
-export default () => {
+const ContactForm = () => {
         const classes = useStyles();
         const form = useRef();
 
@@ -98,3 +97,5 @@ export default () => {
                 </div>
         )
 }
+
+export default ContactForm;

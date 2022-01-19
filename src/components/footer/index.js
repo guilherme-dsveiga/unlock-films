@@ -126,7 +126,7 @@ const useStyles = makeStyles((theme) => ({
         }
 }))
 
-export default () => {
+const Footer = () => {
         const classes = useStyles();
 
         const [postData, setPostData] = useState();
@@ -194,10 +194,12 @@ export default () => {
                         <footer className={classes.bottomContainer}>
                                 <div className={classes.jobsContainer}>
                                         <Typography className={classes.unlockFooter}>© 2021 - Unlock Films. Desenvolvido por</Typography>
-                                        <a href='https://jobsdigital.com.br'><img className={classes.jobsImage} src={JobsDigital}></img></a>
+                                        <a href='https://jobsdigital.com.br'><img className={classes.jobsImage} src={JobsDigital} alt="Logo da Jobs Digital"></img></a>
                                 </div>
                                 <Box className={classes.footerTwo}><p>Este site é protegido pelo <a className={classes.accent} href="https://policies.google.com/privacy"><span className={classes.accentSpan} >reCAPTCHA</span></a> e a Política de Privacidade e os <a className={classes.accent} href="https://policies.google.com/terms"><span className={classes.accentSpan}>Termos de Serviços</span></a> do Google se aplicam.</p></Box>
                         </footer>
                 </div>
         );
 }
+
+export default Footer;

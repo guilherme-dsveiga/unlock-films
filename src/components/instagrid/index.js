@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-export default ({ postData }) => {
+const Instagrid = ({ postData }) => {
         const classes = useStyles();
 
         return (
@@ -58,87 +58,87 @@ export default ({ postData }) => {
                                 <div className={classes.instaGrid}>
                                         <div className={classes.row}>
                                                 <a href={postData[0].permalink} className={classes.a}>
-                                                        {postData[0].media_type == 'VIDEO' ?
+                                                        {postData[0].media_type === 'VIDEO' ?
 
-                                                                <img className={classes.img} src={postData[0].thumbnail_url}></img>
+                                                                <img className={classes.img} src={postData[0].thumbnail_url} alt="Imagem retirada do Instagram"></img>
 
                                                                 :
-                                                                <img className={classes.img} src={postData[0].media_url}></img>
+                                                                <img className={classes.img} src={postData[0].media_url} alt="Imagem retirada do Instagram"></img>
                                                         }
                                                 </a>
                                                 <a href={postData[1].permalink} className={classes.a}>
-                                                        {postData[1].media_type == 'VIDEO' ?
+                                                        {postData[1].media_type === 'VIDEO' ?
 
-                                                                <img className={classes.img} src={postData[1].thumbnail_url}></img>
+                                                                <img className={classes.img} src={postData[1].thumbnail_url} alt="Imagem retirada do Instagram"></img>
 
                                                                 :
-                                                                <img className={classes.img} src={postData[1].media_url}></img>
+                                                                <img className={classes.img} src={postData[1].media_url} alt="Imagem retirada do Instagram"></img>
                                                         }
                                                 </a>
                                                 <a href={postData[2].permalink} className={classes.a}>
-                                                        {postData[2].media_type == 'VIDEO' ?
+                                                        {postData[2].media_type === 'VIDEO' ?
 
-                                                                <img className={classes.img} src={postData[2].thumbnail_url}></img>
+                                                                <img className={classes.img} src={postData[2].thumbnail_url} alt="Imagem retirada do Instagram"></img>
 
                                                                 :
-                                                                <img className={classes.img} src={postData[2].media_url}></img>
+                                                                <img className={classes.img} src={postData[2].media_url} alt="Imagem retirada do Instagram"></img>
                                                         }</a>
                                         </div>
                                         <div className={classes.row}>
                                                 <a href={postData[3].permalink} className={classes.a}>
-                                                        {postData[3].media_type == 'VIDEO' ?
+                                                        {postData[3].media_type === 'VIDEO' ?
 
-                                                                <img className={classes.img} src={postData[3].thumbnail_url}></img>
+                                                                <img className={classes.img} src={postData[3].thumbnail_url} alt="Imagem retirada do Instagram"></img>
 
                                                                 :
-                                                                <img className={classes.img} src={postData[3].media_url}></img>
+                                                                <img className={classes.img} src={postData[3].media_url} alt="Imagem retirada do Instagram"></img>
                                                         }
                                                 </a>
                                                 <a href={postData[4].permalink} className={classes.a}>
-                                                        {postData[4].media_type == 'VIDEO' ?
+                                                        {postData[4].media_type === 'VIDEO' ?
 
-                                                                <img className={classes.img} src={postData[4].thumbnail_url}></img>
+                                                                <img className={classes.img} src={postData[4].thumbnail_url} alt="Imagem retirada do Instagram"></img>
 
                                                                 :
-                                                                <img className={classes.img} src={postData[4].media_url}></img>
+                                                                <img className={classes.img} src={postData[4].media_url} alt="Imagem retirada do Instagram"></img>
                                                         }
                                                 </a>
                                                 <a href={postData[5].permalink} className={classes.a}>
-                                                        {postData[5].media_type == 'VIDEO' ?
+                                                        {postData[5].media_type === 'VIDEO' ?
 
-                                                                <img className={classes.img} src={postData[5].thumbnail_url}></img>
+                                                                <img className={classes.img} src={postData[5].thumbnail_url} alt="Imagem retirada do Instagram"></img>
 
                                                                 :
-                                                                <img className={classes.img} src={postData[5].media_url}></img>
+                                                                <img className={classes.img} src={postData[5].media_url} alt="Imagem retirada do Instagram"></img>
                                                         }
                                                 </a>
                                         </div>
                                         <div className={classes.row}>
                                                 <a href={postData[6].permalink} className={classes.a}>
-                                                        {postData[6].media_type == 'VIDEO' ?
+                                                        {postData[6].media_type === 'VIDEO' ?
 
-                                                                <img className={classes.img} src={postData[6].thumbnail_url}></img>
+                                                                <img className={classes.img} src={postData[6].thumbnail_url} alt="Imagem retirada do Instagram"></img>
 
                                                                 :
-                                                                <img className={classes.img} src={postData[6].media_url}></img>
+                                                                <img className={classes.img} src={postData[6].media_url} alt="Imagem retirada do Instagram"></img>
                                                         }
                                                 </a>
                                                 <a href={postData[7].permalink} className={classes.a}>
-                                                        {postData[7].media_type == 'VIDEO' ?
+                                                        {postData[7].media_type === 'VIDEO' ?
 
-                                                                <img className={classes.img} src={postData[7].thumbnail_url}></img>
+                                                                <img className={classes.img} src={postData[7].thumbnail_url} alt="Imagem retirada do Instagram"></img>
 
                                                                 :
-                                                                <img className={classes.img} src={postData[7].media_url}></img>
+                                                                <img className={classes.img} src={postData[7].media_url} alt="Imagem retirada do Instagram"></img>
                                                         }
                                                 </a>
                                                 <a href={postData[8].permalink} className={classes.a}>
-                                                        {postData[8].media_type == 'VIDEO' ?
+                                                        {postData[8].media_type === 'VIDEO' ?
 
-                                                                <img className={classes.img} src={postData[8].thumbnail_url}></img>
+                                                                <img className={classes.img} src={postData[8].thumbnail_url} alt="Imagem retirada do Instagram"></img>
 
                                                                 :
-                                                                <img className={classes.img} src={postData[8].media_url}></img>
+                                                                <img className={classes.img} src={postData[8].media_url} alt="Imagem retirada do Instagram"></img>
                                                         }
                                                 </a>
                                         </div>
@@ -152,3 +152,5 @@ export default ({ postData }) => {
         );
 
 }
+
+export default Instagrid;

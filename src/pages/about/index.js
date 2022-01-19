@@ -4,14 +4,9 @@ import Header from '../../components/header';
 import Footer from '../../components/footer';
 import Banner from '../../components/banner';
 import InfoIcon from '@material-ui/icons/Info';
-import InstagramIcon from '@material-ui/icons/Instagram';
 import bgImage from '../../assets/home-banner.jpg';
 import brothersBanner from '../../assets/brothers-banner.jpg';
-import Lucas from '../../assets/lucas.jpg'
-import Matheus from '../../assets/matheus.jpg'
-import { Typography, Button } from '@material-ui/core';
-import { Link } from "react-router-dom";
-const axios = require('axios');
+import { Typography } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
         homeBanner: {
@@ -96,32 +91,23 @@ const useStyles = makeStyles((theme) => ({
         linkItem: {
                 textDecoration: 'none',
                 color: 'white!important',
+        },
+        aboutTextContainer:{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                paddingBlock: theme.spacing(3)
+        },
+        aboutText: {
+                width: '75%',
+                margin: '0 auto'
         }
 }))
 
-export default () => {
+const About = () => {
         const classes = useStyles();
 
         const [blackHeader, setBlackHeader] = useState(false);
-        const [postInfo, setPostInfo] = useState();
-
-        useEffect(() => {
-                const getPostsInfo = async () => {
-                        const getToken = async () => {
-                                const instagramToken = await fetch('https://ig.instant-tokens.com/users/3b35b858-12c7-47d0-b1ff-3c3d9467809d/instagram/17841421110663076/token?userSecret=ifanstoaihr16010givp6v').then((res) => res.json());
-                                const url = "https://graph.instagram.com/me/media?access_token=" + instagramToken.Token.toString() + "&fields=media_url,media_type,permalink,thumbnail_url"
-                                return url;
-                        }
-                        const url = await getToken()
-                        axios.get(url).then(function (response) {
-                                setPostInfo(response.data.data);
-                                console.log(response.data.data)
-                        })
-                }
-
-                getPostsInfo();
-        }, []);
-
 
         useEffect(() => {
                 const scrollListener = () => {
@@ -146,29 +132,17 @@ export default () => {
                                 <Banner bannerImg={bgImage} icon={<InfoIcon fontSize='inherit' />} label='sobre nós' darkbg={true} />
                         </div>
                         <div className={classes.homeBanner}>
-                                <img className={classes.homeBannerImg} src={brothersBanner}></img>
+                                <img className={classes.homeBannerImg} src={brothersBanner} alt="Foto dos criadores da Unlock Films"></img>
                         </div>
-                        <section className={classes.descriptionSection}>
-                                <div className={classes.singleReverse}>
-                                        <div className={classes.textBlock}>
-                                                <Typography className={classes.textBlockTypography} variant='h3'>Lucas Yuji</Typography>
-                                                <Typography className={classes.textBlockTypography} variant="h5">Shabby chic etsy cray listicle flexitarian taiyaki. Pop-up flannel occupy, tumeric slow-carb meh kombucha. Edison bulb meditation sustainable, meggings hexagon godard forage farm-to-table activated charcoal vape polaroid. Whatever ennui live-edge, hella franzen small batch wayfarers narwhal kombucha man bun 90's lo-fi. Hashtag raclette pickled knausgaard shaman bushwick lo-fi vaporware offal intelligentsia cardigan.</Typography>
-                                                <Typography className={classes.textBlockTypography} variant="h5">Portland bitters gluten-free vinyl. Celiac succulents shoreditch prism. Neutra readymade hoodie raw denim echo park post-ironic air plant chillwave cray typewriter fashion axe adaptogen. Disrupt microdosing try-hard thundercats church-key subway tile narwhal chicharrones. Tattooed knausgaard before they sold out, skateboard selfies ennui beard la croix truffaut live-edge banjo squid tumeric yuccie. Deep v post-ironic brooklyn flexitarian freegan, gochujang health goth tacos la croix keytar air plant echo park kinfolk hexagon wayfarers.</Typography>
-                                                <Button className={classes.instagramButton}  variant="contained" startIcon={<InstagramIcon className={classes.instagramIconFont} fontSize='inherit' />}><Link className={classes.linkItem} to={{ pathname: "https://www.instagram.com/_lucasyuji/" }}  target="_blank">@_lucasyuji</Link></Button>
-                                        </div>
-                                        <img className={classes.picture} src={Lucas}></img>
-                                </div>
-                                <div className={classes.single}>
-                                        <img className={classes.picture} src={Matheus}></img>
-                                        <div className={classes.textBlock}>
-                                                <Typography className={classes.textBlockTypography} variant='h3'>Matheus Kenji</Typography>
-                                                <Typography className={classes.textBlockTypography} variant="h5">Shabby chic etsy cray listicle flexitarian taiyaki. Pop-up flannel occupy, tumeric slow-carb meh kombucha. Edison bulb meditation sustainable, meggings hexagon godard forage farm-to-table activated charcoal vape polaroid. Whatever ennui live-edge, hella franzen small batch wayfarers narwhal kombucha man bun 90's lo-fi. Hashtag raclette pickled knausgaard shaman bushwick lo-fi vaporware offal intelligentsia cardigan.</Typography>
-                                                <Typography className={classes.textBlockTypography} variant="h5">Portland bitters gluten-free vinyl. Celiac succulents shoreditch prism. Neutra readymade hoodie raw denim echo park post-ironic air plant chillwave cray typewriter fashion axe adaptogen. Disrupt microdosing try-hard thundercats church-key subway tile narwhal chicharrones. Tattooed knausgaard before they sold out, skateboard selfies ennui beard la croix truffaut live-edge banjo squid tumeric yuccie. Deep v post-ironic brooklyn flexitarian freegan, gochujang health goth tacos la croix keytar air plant echo park kinfolk hexagon wayfarers.</Typography>
-                                                <Button className={classes.instagramButton}  variant="contained" startIcon={<InstagramIcon className={classes.instagramIconFont} fontSize='inherit' />}><Link className={classes.linkItem} to={{ pathname: "https://www.instagram.com/kenji.films/" }}  target="_blank">@kenji.films</Link></Button>
-                                        </div>
-                                </div>
-                        </section>
+                        <div className={classes.aboutTextContainer}>
+                                <Typography variant='h5' className={classes.aboutText}>Como o nome diz, nossa proposta é desbloquear novos horizontes para o cliente, oferecendo conteúdos criativos e vídeos diferenciados para ajudar você e sua marca a se destacar no mercado.<br /><br />
+                                        Produzimos filmes institucionais, fashion films, vídeos para redes sociais e Youtube, clipes musicais, aftermovies de eventos, entre outras produções.<br /><br />
+                                        Cada Job tem sua pré-produção e pós-produção, onde envolve planejamento, roteiro, direção, captação, edição e finalização, transformando em algo exclusivo.<br /><br />
+                                        E aí, tá esperando o que pra desbloquear o filme pra sua marca?</Typography>
+                        </div>
                         <Footer />
                 </div>
         )
 }
+
+export default About;

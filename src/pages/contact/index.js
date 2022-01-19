@@ -6,7 +6,6 @@ import Banner from '../../components/banner';
 import EmailIcon from '@material-ui/icons/Email';
 import ContactImage from '../../assets/bg-contact.jpg';
 import ContactForm from '../../components/contact-form'
-const axios = require('axios');
 
 const useStyles = makeStyles((theme) => ({
         homeBanner: {
@@ -25,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
         }
 }))
 
-export default () => {
+const Contact = () => {
         const classes = useStyles();
 
         const [blackHeader, setBlackHeader] = useState(false);
@@ -57,3 +56,5 @@ export default () => {
                 </>
         )
 }
+
+export default Contact

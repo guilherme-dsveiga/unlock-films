@@ -61,13 +61,13 @@ const useStyles = makeStyles((theme) => ({
         }
 }))
 
-export default ({ image, title, text, buttonText, buttonIcon }) => {
+const ImageTextContainer = ({ image, title, text, buttonText, buttonIcon }) => {
         const classes = useStyles();
 
         return (
                 <section className={classes.sectionRow}>
                         <div className={classes.imageContainer}>
-                                <img className={classes.image} src={image}></img>
+                                <img className={classes.image} src={image} alt={title}></img>
                         </div>
                         <div className={classes.textContainer}>
                                 <Typography className={classes.typographyTitle}>{title}</Typography>
@@ -88,3 +88,5 @@ export default ({ image, title, text, buttonText, buttonIcon }) => {
                 </section>
         )
 }
+
+export default ImageTextContainer;
