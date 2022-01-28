@@ -1,11 +1,12 @@
 @font-face {
-        font-family: "Sofia Pro Regular";
-        src: local('Sofia Pro Regular'), url('./assets/fonts/Sofia-Pro-Regular.ttf') format('truetype');
+  font-family: "Sofia Pro Regular";
+  src: local("Sofia Pro Regular"),
+    url("./fonts/Sofia-Pro-Regular.ttf") format("truetype");
 }
 
-*{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Sofia Pro Regular'!important;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Sofia Pro Regular" !important;
 }

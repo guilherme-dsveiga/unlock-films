@@ -1,3 +1,26 @@
 .round-border > video {
-        border-radius: 15px;
+  border-radius: 15px;
+}
+
+.round-border {
+  max-width: 1250px !important;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 1700px) {
+  .round-border {
+    max-width: 1000px !important;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .round-border {
+    max-width: 800px !important;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .round-border {
+    max-width: 100% !important;
+  }
 }

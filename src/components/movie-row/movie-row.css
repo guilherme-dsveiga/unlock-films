@@ -1,33 +1,49 @@
-.rec.rec-arrow:hover:enabled {
-        background-color: white!important;
-        color: #333!important;
+.awssld__content {
+  background-color: transparent !important;
 }
 
-.rec.rec-arrow:focus:enabled {
-        background-color: white!important;
-        color: #333!important;
+.awssld__bullets button {
+  --control-bullet-color: rgb(255, 255, 255) !important;
 }
 
-
-button.rec-dot{
-        background-color: rgb(15, 15, 15);
-        box-shadow: 0 0 1px 3px rgba(255, 255, 255, 0.5);
-}
-      
-button.rec-dot:hover, button.rec-dot:active, button.rec-dot:focus  {
-        box-shadow: 0 0 1px 3px rgba(78, 78, 78, 0.5);
+.awssld__bullets .awssld__bullets--active {
+  --control-bullet-active-color: rgb(255, 255, 255) !important;
 }
 
-.react-3d-carousel .slider-container .slider-left div{
-        border: 2px solid rgb(43, 43, 43)!important;
-        color: #000!important;
+.awssld__bullets {
+  bottom: 100px;
 }
 
-.react-3d-carousel .slider-container .slider-right div{
-        border: 2px solid rgb(43, 43, 43)!important;
-        color: #000!important;
+.awssld__controls {
+  --control-button-opacity: 1 !important;
+  --organic-arrow-color: white !important;
 }
 
-.react-3d-carousel .slider-container .slider-content .slider-single .slider-single-content {
-        box-shadow: none!important;
+@media only screen and (max-width: 1366px) {
+  .awssld__bullets {
+    bottom: 80px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .awssld__bullets {
+    bottom: 40px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .awssld__bullets {
+    bottom: 0px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .awssld__bullets {
+    bottom: -20px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .awssld__bullets {
+    bottom: -40px;
+  }
 }
