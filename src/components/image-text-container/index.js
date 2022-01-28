@@ -24,14 +24,21 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "flex-start",
+    [theme.breakpoints.down("sm")]: {
+      alignItems: "center",
+    },
   },
   typographyTitle: {
     fontSize: "2.3rem",
     fontWeight: "700",
     color: "white",
+    [theme.breakpoints.down(900)]: {
+      fontSize: "2rem",
+    },
     [theme.breakpoints.down("sm")]: {
       marginBlock: theme.spacing(1),
     },
+    fontFamily: "Mont Bold!important",
   },
   typography: {
     marginTop: theme.spacing(1),
@@ -41,6 +48,10 @@ const useStyles = makeStyles((theme) => ({
     color: "white",
     [theme.breakpoints.down("md")]: {
       marginBlock: theme.spacing(2),
+    },
+    [theme.breakpoints.down("sm")]: {
+      paddingInline: "1.3rem",
+      fontSize: "16px",
     },
   },
   buttonContainer: {
@@ -59,7 +70,14 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ImageTextContainer = ({ image, title, text, buttonText, buttonIcon }) => {
+const ImageTextContainer = ({
+  image,
+  title,
+  text,
+  buttonText,
+  buttonIcon,
+  button,
+}) => {
   const classes = useStyles();
 
   return (
@@ -70,17 +88,19 @@ const ImageTextContainer = ({ image, title, text, buttonText, buttonIcon }) => {
       <div className={classes.textContainer}>
         <Typography className={classes.typographyTitle}>{title}</Typography>
         <Typography className={classes.typography}>{text}</Typography>
-        <div className={classes.buttonContainer}>
-          <Link className={classes.linkItem} to="/about">
-            <Button
-              variant="contained"
-              className={classes.button}
-              startIcon={buttonIcon}
-            >
-              {buttonText}
-            </Button>
-          </Link>
-        </div>
+        {button ? (
+          <div className={classes.buttonContainer}>
+            <Link className={classes.linkItem} to="/about">
+              <Button
+                variant="contained"
+                className={classes.button}
+                startIcon={buttonIcon}
+              >
+                {buttonText}
+              </Button>
+            </Link>
+          </div>
+        ) : null}
       </div>
     </section>
   );

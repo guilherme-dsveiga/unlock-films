@@ -1,5 +1,9 @@
-.bg-black{
-        background-color: black!important;
-        box-shadow: none!important;
-        color: white!important;
+.bg-black {
+  background-color: black !important;
+  box-shadow: none !important;
+  color: white !important;
+}
+
+#simple-menu {
+  height: 100vh !important;
 }

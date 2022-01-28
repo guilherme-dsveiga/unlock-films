@@ -71,7 +71,7 @@ const MovieRow = ({ op }) => {
   switch (op) {
     case "campanhas":
       slides = (
-        <AwesomeSlider>
+        <AwesomeSlider mobileTouch={true}>
           {movies.campaign.map((item, key) => (
             <div key={key} className={classes.maxSize}>
               <Movie url={item} />

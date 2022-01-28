@@ -4,6 +4,17 @@
     url("./fonts/Sofia-Pro-Regular.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Mont Regular";
+  src: local("Mont Regular"),
+    url("./fonts/Mont-ExtraLightDEMO.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Mont Bold";
+  src: local("Mont Bold"), url("./fonts/Mont-HeavyDEMO.otf") format("opentype");
+}
+
 * {
   margin: 0;
   padding: 0;

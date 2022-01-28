@@ -15,9 +15,6 @@ const useStyles = makeStyles((theme) => ({
   appbar: {
     color: "white",
     boxShadow: "none",
-    [theme.breakpoints.down("sm")]: {
-      backgroundColor: "black!important",
-    },
   },
   toolbar: {
     justifyContent: "space-between",
@@ -55,6 +52,13 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     height: "1.1em",
   },
+  menuMobile: {
+    padding: "1rem",
+    display: "flex",
+    alignItems: "center",
+    flexDirection: "column",
+    gap: "2rem",
+  },
   showDiv: {
     display: "block",
     [theme.breakpoints.down("sm")]: {
@@ -69,9 +73,11 @@ const useStyles = makeStyles((theme) => ({
   },
   linkItem: {
     textDecoration: "none",
+    fontSize: "1.3rem",
+    color: "black",
   },
 }));
-const Header = ({ black, isSmall }) => {
+const Header = ({ black, startBlack }) => {
   const classes = useStyles();
 
   const [anchorEl, setAnchorEl] = useState(null);
@@ -87,7 +93,7 @@ const Header = ({ black, isSmall }) => {
   return (
     <AppBar
       position="fixed"
-      className={black ? "bg-black" : classes.appbar}
+      className={black ? "bg-black" : startBlack ? "bg-black" : classes.appbar}
       color="transparent"
     >
       <Toolbar className={classes.toolbar}>
@@ -112,9 +118,6 @@ const Header = ({ black, isSmall }) => {
           </Link>
           <Link className={classes.linkItem} to="/film">
             <Button className={classes.button}>Filmes</Button>
-          </Link>
-          <Link className={classes.linkItem} to="/about">
-            <Button className={classes.button}>Sobre nós</Button>
           </Link>
           <Link className={classes.linkItem} to="/contact">
             <Button className={classes.button}>Contato</Button>
@@ -196,21 +199,23 @@ const Header = ({ black, isSmall }) => {
           open={Boolean(anchorEl)}
           onClose={handleClose}
         >
-          <MenuItem onClick={handleClose}>
-            <Link className={classes.linkItem} to="/">
-              Home
-            </Link>
-          </MenuItem>
-          <MenuItem onClick={handleClose}>
-            <Link className={classes.linkItem} to="/film">
-              Filmes
-            </Link>
-          </MenuItem>
-          <MenuItem onClick={handleClose}>
-            <Link className={classes.linkItem} to="/">
-              Contato
-            </Link>
-          </MenuItem>
+          <div className={classes.menuMobile}>
+            <MenuItem onClick={handleClose}>
+              <Link className={classes.linkItem} to="/">
+                Home
+              </Link>
+            </MenuItem>
+            <MenuItem onClick={handleClose}>
+              <Link className={classes.linkItem} to="/film">
+                Filmes
+              </Link>
+            </MenuItem>
+            <MenuItem onClick={handleClose}>
+              <Link className={classes.linkItem} to="/contact">
+                Contato
+              </Link>
+            </MenuItem>
+          </div>
         </Menu>
       </Toolbar>
     </AppBar>

@@ -44,7 +44,7 @@ const Contact = () => {
   return (
     <>
       <div className={classes.headerBgWrapper}>
-        <Header black={blackHeader} />
+        <Header black={blackHeader} startBlack={true} />
         <Banner
           bannerImg="./assets/bg-contact.jpg"
           icon={<EmailIcon fontSize="inherit" />}

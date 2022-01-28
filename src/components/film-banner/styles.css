@@ -1,0 +1,12 @@
+.background {
+  background-image: url("../../assets/film-background.jpg");
+  background-size: cover;
+  min-height: 65vh;
+  background-position: center center;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-inline: 15%;
+  text-align: center;
+  color: white;
+}

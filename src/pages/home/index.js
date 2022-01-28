@@ -3,10 +3,10 @@ import "./home.css";
 import Header from "../../components/header";
 import ImageTextContainer from "../../components/image-text-container";
 import Clients from "../../components/clients";
+import FilmBanner from "../../components/film-banner";
 import Footer from "../../components/footer";
 import IconButton from "@material-ui/core/IconButton";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import AddIcon from "@material-ui/icons/Add";
 import { makeStyles } from "@material-ui/core/styles";
 import ReactPlayer from "react-player";
 
@@ -77,13 +77,13 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       marginBlock: theme.spacing(3),
     },
-    relative: {
-      position: "relative",
-    },
-    absoluteHook: {
-      position: "absolute",
-      top: "-124px",
-    },
+  },
+  relative: {
+    position: "relative",
+  },
+  absoluteHook: {
+    position: "absolute",
+    top: "-124px",
   },
 }));
 
@@ -166,14 +166,14 @@ const Home = () => {
       <div className={classes.relative}>
         <div className={classes.absoluteHook} ref={myRef}></div>
         <ImageTextContainer
-          image="./assets/placeholder.jpg"
-          title="Sobre nós"
+          image="./assets/brothers-banner.jpg"
+          title="SOBRE NÓS"
           text={aboutText}
-          buttonText="Ver mais"
-          buttonIcon={<AddIcon />}
+          button={false}
         />
       </div>
       <Clients />
+      <FilmBanner />
       <Footer />
     </div>
   );
