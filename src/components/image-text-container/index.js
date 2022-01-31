@@ -7,15 +7,19 @@ const useStyles = makeStyles((theme) => ({
   sectionRow: {
     display: "flex",
     flexDirection: "row",
-    marginBlock: theme.spacing(3),
-    marginInline: theme.spacing(3),
-    gap: "1rem",
+    padding: theme.spacing(5),
+    gap: theme.spacing(10),
     [theme.breakpoints.down("sm")]: {
       flexDirection: "column-reverse",
       margin: "0",
     },
+    "&>*": {
+      flexBasis: "100%",
+    },
   },
-  imageContainer: {},
+  imageContainer: {
+    width: "100%",
+  },
   image: {
     width: "100%",
   },
