@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
+import useScrollListener from "../../hooks/useScrollListener";
 import { makeStyles } from "@material-ui/core/styles";
-import Header from "../../components/header";
 import { Theaters } from "@material-ui/icons";
 import { Typography } from "@material-ui/core";
+import Header from "../../components/header";
 import MovieRow from "../../components/movie-row";
 import Footer from "../../components/footer";
 import Banner from "../../components/banner";
@@ -29,24 +30,25 @@ const useStyles = makeStyles((theme) => ({
       marginBottom: "-0",
     },
   },
-  headerBgWrapper: {
-    marginTop: "124px",
-  },
 }));
 
 const Films = () => {
   const classes = useStyles();
+
+  const [blackHeader, setBlackHeader] = useState(false);
+
+  useScrollListener(setBlackHeader);
+
   return (
     <div className={classes.filmPage}>
       <div className={classes.headerBgWrapper}>
-        <Header black={true} />
+        <Header black={blackHeader} startBlack={false} />
         <Banner
-          className={classes.banner}
           bannerImg="./assets/film-background.jpg"
           icon={<Theaters fontSize="inherit" />}
           label="confira nossos filmes!"
           darkbg={false}
-          marginTop={true}
+          marginTop={false}
         />
       </div>
       <section className={classes.section}>

@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import useScrollListener from "../../hooks/useScrollListener";
 import { makeStyles } from "@material-ui/core/styles";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
@@ -25,26 +26,12 @@ const Contact = () => {
 
   const [blackHeader, setBlackHeader] = useState(false);
 
-  useEffect(() => {
-    const scrollListener = () => {
-      if (window.scrollY > 150) {
-        setBlackHeader(true);
-      } else {
-        setBlackHeader(false);
-      }
-    };
-
-    window.addEventListener("scroll", scrollListener);
-
-    return () => {
-      window.removeEventListener("scroll", scrollListener);
-    };
-  }, []);
+  useScrollListener(setBlackHeader);
 
   return (
     <>
       <div className={classes.headerBgWrapper}>
-        <Header black={blackHeader} startBlack={true} />
+        <Header black={blackHeader} startBlack={false} />
         <Banner
           bannerImg="./assets/bg-contact.jpg"
           icon={<EmailIcon fontSize="inherit" />}

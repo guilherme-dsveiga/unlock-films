@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./home.css";
+import useScrollListener from "../../hooks/useScrollListener";
+import { makeStyles } from "@material-ui/core/styles";
+import ReactPlayer from "react-player";
 import Header from "../../components/header";
 import ImageTextContainer from "../../components/image-text-container";
 import Clients from "../../components/clients";
@@ -7,8 +9,7 @@ import FilmBanner from "../../components/film-banner";
 import Footer from "../../components/footer";
 import IconButton from "@material-ui/core/IconButton";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import { makeStyles } from "@material-ui/core/styles";
-import ReactPlayer from "react-player";
+import "./home.css";
 
 const useStyles = makeStyles((theme) => ({
   app: {
@@ -85,6 +86,9 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
     top: "-124px",
   },
+  imgTextContainer: {
+    padding: theme.spacing(10),
+  },
 }));
 
 const Home = () => {
@@ -95,21 +99,7 @@ const Home = () => {
 
   const myRef = useRef(null);
 
-  useEffect(() => {
-    const scrollListener = () => {
-      if (window.scrollY > 150) {
-        setBlackHeader(true);
-      } else {
-        setBlackHeader(false);
-      }
-    };
-
-    window.addEventListener("scroll", scrollListener);
-
-    return () => {
-      window.removeEventListener("scroll", scrollListener);
-    };
-  }, []);
+  useScrollListener(setBlackHeader);
 
   const handleScroll = () => {
     myRef.current.scrollIntoView();
@@ -123,7 +113,7 @@ const Home = () => {
     }
   };
 
-  let aboutText = `Como o nome diz, nossa proposta é desbloquear novos horizontes para o cliente, oferecendo conteúdos criativos e vídeos diferenciados para ajudar você e sua marca a se destacar no mercado.
+  const aboutText = `Como o nome diz, nossa proposta é desbloquear novos horizontes para o cliente, oferecendo conteúdos criativos e vídeos diferenciados para ajudar você e sua marca a se destacar no mercado.
 
         Produzimos filmes institucionais, fashion films, vídeos para redes sociais e Youtube, clipes musicais, aftermovies de eventos, entre outras produções.
         
@@ -166,6 +156,7 @@ const Home = () => {
       <div className={classes.relative}>
         <div className={classes.absoluteHook} ref={myRef}></div>
         <ImageTextContainer
+          className={classes.imgTextContainer}
           image="./assets/brothers-banner.jpg"
           title="SOBRE NÓS"
           text={aboutText}
