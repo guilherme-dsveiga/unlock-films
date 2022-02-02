@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   instaGrid: {
     maxWidth: "630px",
     height: "auto",
-    display: "flex",
+    display: "none",
     justifyContent: "center",
     alignItems: "center",
   },
