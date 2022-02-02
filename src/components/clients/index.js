@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography, Container } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
@@ -24,13 +24,12 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(3),
   },
   gridImageContainer: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
+    width: "175px",
+    height: "175px",
   },
   gridImageBlack: {
-    width: "225px",
-    height: "225px",
+    width: "100%",
+    height: "100%",
     padding: "1rem",
     alignSelf: "center",
     backgroundColor: "black",
@@ -49,6 +48,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     alignItems: "center",
     marginBottom: theme.spacing(5),
+    paddingTop: theme.spacing(8),
     [theme.breakpoints.down("sm")]: {
       display: "flex",
       flexDirection: "column",
@@ -66,11 +66,6 @@ const useStyles = makeStyles((theme) => ({
 
 const Clients = () => {
   const classes = useStyles();
-  const [showItem, setShowItem] = useState(false);
-
-  const showMoreItems = () => {
-    setShowItem((prev) => !prev);
-  };
 
   return (
     <div className={classes.clientsWrapper}>
@@ -78,7 +73,7 @@ const Clients = () => {
         <Typography variant="h2" className={classes.ourClients}>
           NOSSOS CLIENTES
         </Typography>
-        <Grid className={classes.gridContainer} container spacing={3}>
+        <Grid className={classes.gridContainer} container spacing={5}>
           <Grid className={classes.gridImageContainer} item xs={3}>
             <img
               className={classes.gridImageBlack}
@@ -133,6 +128,20 @@ const Clients = () => {
             <img
               className={classes.gridImageBlack}
               src="./assets/via.png"
+              alt="Logo de cliente"
+            ></img>
+          </Grid>
+          <Grid className={classes.gridImageContainer} item xs={3}>
+            <img
+              className={classes.gridImageBlack}
+              src="./assets/rihappy.png"
+              alt="Logo de cliente"
+            ></img>
+          </Grid>
+          <Grid className={classes.gridImageContainer} item xs={3}>
+            <img
+              className={classes.gridImageBlack}
+              src="./assets/mauruuru.png"
               alt="Logo de cliente"
             ></img>
           </Grid>

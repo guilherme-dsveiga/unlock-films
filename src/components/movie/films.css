@@ -3,19 +3,19 @@
 }
 
 .round-border {
-  max-width: 1250px !important;
+  max-width: 1000px !important;
   margin: 0 auto;
 }
 
 @media only screen and (max-width: 1700px) {
   .round-border {
-    max-width: 1000px !important;
+    max-width: 900px !important;
   }
 }
 
 @media only screen and (max-width: 1400px) {
   .round-border {
-    max-width: 800px !important;
+    max-width: 650px !important;
   }
 }
 

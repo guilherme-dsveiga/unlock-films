@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import useScrollListener from "../../hooks/useScrollListener";
+import { Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import ReactPlayer from "react-player";
 import Header from "../../components/header";
-import ImageTextContainer from "../../components/image-text-container";
 import Clients from "../../components/clients";
 import FilmBanner from "../../components/film-banner";
 import Footer from "../../components/footer";
@@ -86,8 +86,23 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
     top: "-124px",
   },
-  imgTextContainer: {
-    padding: theme.spacing(10),
+  textContainer: {
+    paddingInline: theme.spacing(10),
+    paddingBlock: theme.spacing(5),
+    color: "white",
+    textAlign: "center",
+  },
+  typographyTitle: {
+    fontFamily: "Mont Bold!important",
+    [theme.breakpoints.down(900)]: {
+      fontSize: "2rem",
+    },
+    marginBottom: "20px",
+  },
+  typography: {
+    [theme.breakpoints.down(900)]: {
+      fontSize: "1.1rem",
+    },
   },
 }));
 
@@ -112,14 +127,6 @@ const Home = () => {
       setVolume("0.2");
     }
   };
-
-  const aboutText = `Como o nome diz, nossa proposta é desbloquear novos horizontes para o cliente, oferecendo conteúdos criativos e vídeos diferenciados para ajudar você e sua marca a se destacar no mercado.
-
-        Produzimos filmes institucionais, fashion films, vídeos para redes sociais e Youtube, clipes musicais, aftermovies de eventos, entre outras produções.
-        
-        Cada Job tem sua pré-produção e pós-produção, onde envolve planejamento, roteiro, direção, captação, edição e finalização, transformando em algo exclusivo.
-        
-        E aí, tá esperando o que pra desbloquear o filme pra sua marca?`;
 
   return (
     <div className={classes.app}>
@@ -155,13 +162,26 @@ const Home = () => {
       </div>
       <div className={classes.relative}>
         <div className={classes.absoluteHook} ref={myRef}></div>
-        <ImageTextContainer
-          className={classes.imgTextContainer}
-          image="./assets/brothers-banner.jpg"
-          title="SOBRE NÓS"
-          text={aboutText}
-          button={false}
-        />
+        <div className={classes.textContainer}>
+          <Typography variant="h2" className={classes.typographyTitle}>
+            Sobre Nós
+          </Typography>
+          <Typography variant="h5" className={classes.typography}>
+            Como o nome diz, nossa proposta é desbloquear novos horizontes para
+            o cliente, oferecendo conteúdos criativos e vídeos diferenciados
+            para ajudar você e sua marca a se destacar no mercado.
+            <br />
+            <br />
+            Produzimos filmes institucionais, fashion films, vídeos para redes
+            sociais e Youtube, clipes musicais, aftermovies de eventos, entre
+            outras produções. Cada Job tem sua pré-produção e pós-produção, onde
+            envolve planejamento, roteiro, direção, captação, edição e
+            finalização, transformando em algo exclusivo.
+            <br />
+            <br />E aí, tá esperando o que pra desbloquear o filme pra sua
+            marca?
+          </Typography>
+        </div>
       </div>
       <Clients />
       <FilmBanner />

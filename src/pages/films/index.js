@@ -46,7 +46,7 @@ const Films = () => {
         <Banner
           bannerImg="./assets/film-background.jpg"
           icon={<Theaters fontSize="inherit" />}
-          label="confira nossos filmes!"
+          label="CONFIRA NOSSOS FILMES!"
           darkbg={false}
           marginTop={false}
         />
